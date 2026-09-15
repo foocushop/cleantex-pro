@@ -1,5 +1,13 @@
 [
   {
+    "id": "NOTIF-1789497072277",
+    "timestamp": "2026-09-15T18:31:12.277Z",
+    "type": "NEW_REQUEST",
+    "subject": "🔔 Nouvelle demande : Mouhamad Diedhiou — Tapis & Moquette (DEV-2026-1009)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Client: Mouhamad Diedhiou | Tél: 778288601 | Niaga | Tapis & Moquette"
+  },
+  {
     "id": "NOTIF-1789494908858",
     "timestamp": "2026-09-15T17:55:08.858Z",
     "type": "EMAIL_SIMULATION",
