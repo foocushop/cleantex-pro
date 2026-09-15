@@ -1,22 +1,5 @@
 [
   {
-    "id": "DEV-2026-1006",
-    "createdAt": "2026-09-15T16:24:05.329Z",
-    "nom": "Alexandre Dumas",
-    "email": "alexandre.dumas@test.fr",
-    "telephone": "06 99 88 77 66",
-    "service": "Canap� & Fauteuils",
-    "details": "Canap� velours 3 places",
-    "ville": "Paris (75008)",
-    "dateSouhaitee": "2026-09-20",
-    "message": "Demande de test pour v�rification imm�diate.",
-    "photos": [],
-    "status": "Terminé",
-    "notesInternes": "",
-    "estimatifPrix": "À partir de 69€",
-    "updatedAt": "2026-09-15T17:46:41.972Z"
-  },
-  {
     "id": "DEV-2026-1005",
     "createdAt": "2026-09-15T15:49:59.943Z",
     "nom": "Julien Lefebvre",
