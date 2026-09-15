@@ -238,16 +238,16 @@ function initQuoteForm() {
       const result = await response.json();
 
       if (response.ok && result.success) {
-        // Success!
+        // Succès !
         form.reset();
         const photoPreviews = document.getElementById('photoPreviews');
         if (photoPreviews) photoPreviews.innerHTML = '';
 
-        // Fill modal details
+        // Remplir la modale
         if (modalRefNumber) modalRefNumber.textContent = result.request.id;
         if (modalClientName) modalClientName.textContent = result.request.nom;
 
-        // Configure WhatsApp direct discussion button
+        // Bouton WhatsApp
         if (modalWhatsAppBtn) {
           const waMessage = encodeURIComponent(
             `Bonjour CleanTex Pro ! Je viens de déposer la demande ${result.request.id} sur votre site pour : ${result.request.service} (${result.request.nom} - ${result.request.telephone}). Pouvez-vous me confirmer vos disponibilités ?`
@@ -255,19 +255,19 @@ function initQuoteForm() {
           modalWhatsAppBtn.href = `https://wa.me/33184742000?text=${waMessage}`;
         }
 
-        // Show modal
+        // Ouvrir la modale de confirmation
         if (modal) modal.classList.add('open');
 
+        // Toast de succès
         showToast(`✅ Demande ${result.request.id} transmise avec succès !`);
 
-        // Update badge
-        fetchLiveStatsBadge();
       } else {
-        showToast(`❌ Erreur: ${result.error || 'Impossible d\'enregistrer votre demande.'}`);
+        showToast(`❌ Erreur : ${result.error || 'Impossible d\'enregistrer votre demande.'}`);
       }
     } catch (err) {
-      console.error(err);
+      console.error('[QuoteForm] Erreur réseau:', err);
       showToast('❌ Erreur de communication avec le serveur. Veuillez réessayer ou nous contacter par téléphone.');
+
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalBtnText;
