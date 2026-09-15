@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "id": "DEV-2026-1001",
+    "createdAt": "2026-09-15T18:17:49.999Z",
+    "nom": "Elodie Laurent",
+    "telephone": "06 45 89 12 34",
+    "email": "elodie.laurent@gmail.com",
+    "service": "Canapé & Fauteuils",
+    "details": "Canapé d'angle 5 places en tissu beige",
+    "ville": "Paris 15ème (75015)",
+    "dateSouhaitee": "2026-09-18",
+    "message": "Présence de plusieurs auréoles d'eau et taches de chocolat. Merci !",
+    "photos": [],
+    "status": "Nouveau",
+    "notesInternes": "À rappeler vers 18h",
+    "estimatifPrix": "À partir de 69€"
+  },
+  {
+    "id": "DEV-2026-1002",
+    "createdAt": "2026-09-14T21:17:50.000Z",
+    "nom": "Marc Benhamou",
+    "telephone": "07 82 11 90 45",
+    "email": "marc.benhamou@outlook.fr",
+    "service": "Matelas & Sommiers",
+    "details": "2 matelas 160x200",
+    "ville": "Boulogne-Billancourt (92100)",
+    "dateSouhaitee": "2026-09-19",
+    "message": "Désinfection et détachage complet pour emménagement.",
+    "photos": [],
+    "status": "Devis envoyé",
+    "notesInternes": "Devis 110€ envoyé par SMS.",
+    "estimatifPrix": "À partir de 49€"
+  },
+  {
+    "id": "DEV-2026-1003",
+    "createdAt": "2026-09-13T21:17:50.000Z",
+    "nom": "Sophie Delattre",
+    "telephone": "06 12 34 56 78",
+    "email": "sophie.delattre@free.fr",
+    "service": "Tapis & Moquettes",
+    "details": "Grand tapis persan laine 3x2m",
+    "ville": "Neuilly-sur-Seine (92200)",
+    "dateSouhaitee": "2026-09-16",
+    "message": "Tapis ancien taché par du café. Traitement délicat requis.",
+    "photos": [],
+    "status": "Terminé",
+    "notesInternes": "Client ravi, a laissé 5 étoiles Google.",
+    "estimatifPrix": "À partir de 39€"
+  }
+]
