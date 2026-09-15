@@ -1,21 +1,5 @@
 [
   {
-    "id": "DEV-2026-1008",
-    "createdAt": "2026-09-15T17:55:08.855Z",
-    "nom": "gvyhjb",
-    "email": "",
-    "telephone": "777777777",
-    "service": "Canapé & Fauteuils",
-    "details": "",
-    "ville": "fffft",
-    "dateSouhaitee": "",
-    "message": "",
-    "photos": [],
-    "status": "Nouveau",
-    "notesInternes": "",
-    "estimatifPrix": "À partir de 69€"
-  },
-  {
     "id": "DEV-2026-1007",
     "createdAt": "2026-09-15T17:47:47.655Z",
     "nom": "Mouhamad Diedhiou",
