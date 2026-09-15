@@ -1,5 +1,13 @@
 [
   {
+    "id": "NOTIF-1789497109573",
+    "timestamp": "2026-09-15T18:31:49.573Z",
+    "type": "NEW_REQUEST",
+    "subject": "🔔 Nouvelle demande : frfv nbn — Canapé & Fauteuils (DEV-2026-1010)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Client: frfv nbn | Tél: 778288601 | Niaga | Canapé & Fauteuils"
+  },
+  {
     "id": "NOTIF-1789497072277",
     "timestamp": "2026-09-15T18:31:12.277Z",
     "type": "NEW_REQUEST",
