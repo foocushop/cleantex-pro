@@ -159,6 +159,54 @@ async function githubWrite(key, data, commitMsg) {
   }
 }
 
+/** Upload a binary file (photo) to GitHub */
+async function githubUploadBinary(ghPath, buffer, commitMsg, retries = 2) {
+  const content = buffer.toString('base64');
+  const body = {
+    message: commitMsg || `upload: ${ghPath} via CleanTex Pro`,
+    content,
+    branch: GITHUB_BRANCH
+  };
+
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      if (attempt > 0) {
+        await new Promise(r => setTimeout(r, 600 * attempt));
+      }
+      const { status, body: resp } = await githubRequest('PUT', ghPath, body);
+      if (status === 200 || status === 201) {
+        console.log(`[GitHub Storage] Photo sauvegardée sur GitHub : ${ghPath}`);
+        return true;
+      }
+      if (status === 409 && attempt < retries) {
+        console.warn(`[GitHub Storage] Conflit 409 sur ${ghPath}, nouvel essai (${attempt + 1}/${retries})…`);
+        continue;
+      }
+      console.error(`[GitHub Storage] Echec upload photo (${ghPath}): HTTP ${status}`, resp);
+      return false;
+    } catch (err) {
+      if (attempt < retries) continue;
+      console.error(`[GitHub Storage] Erreur upload photo (${ghPath}):`, err.message);
+      return false;
+    }
+  }
+  return false;
+}
+
+/** Retrieve a binary file (photo) from GitHub */
+async function githubGetBinary(ghPath) {
+  try {
+    const { status, body } = await githubRequest('GET', ghPath);
+    if (status === 200 && body.content) {
+      return Buffer.from(body.content, 'base64');
+    }
+    return null;
+  } catch (err) {
+    console.warn(`[GitHub Storage] Erreur lecture photo (${ghPath}):`, err.message);
+    return null;
+  }
+}
+
 // ─── High-level storage API ───────────────────────────────────────────────────
 
 const CACHE_TTL_MS = 60 * 1000; // 60s cache validity
@@ -356,7 +404,49 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(PUBLIC_DIR));
+
+// ─── Uploaded photos route ───────────────────────────────────────────────────
+// Serve files: check local disk first. If missing (e.g. after Render restart/redeploy),
+// automatically restore the file from GitHub repository and cache locally.
+app.get('/uploads/:filename', async (req, res) => {
+  const filename = path.basename(req.params.filename);
+  const localPath = path.join(UPLOADS_DIR, filename);
+
+  // 1. If present on local disk, serve immediately
+  if (fs.existsSync(localPath)) {
+    return res.sendFile(localPath);
+  }
+
+  // 2. If missing (after container restart), download from GitHub!
+  if (USE_GITHUB) {
+    const imgBuffer = await githubGetBinary(`uploads/${filename}`);
+    if (imgBuffer) {
+      try { fs.writeFileSync(localPath, imgBuffer); } catch (_) {}
+      const ext = path.extname(filename).toLowerCase();
+      const mimeTypes = {
+        '.jpg':  'image/jpeg',
+        '.jpeg': 'image/jpeg',
+        '.png':  'image/png',
+        '.webp': 'image/webp',
+        '.gif':  'image/gif',
+        '.heic': 'image/heic'
+      };
+      res.setHeader('Content-Type', mimeTypes[ext] || 'image/jpeg');
+      res.setHeader('Cache-Control', 'public, max-age=31536000');
+      return res.send(imgBuffer);
+    }
+  }
+
+  return res.status(404).send('Image introuvable ou supprimée.');
+});
+
+// Alias for /upload/:filename (singular without 's')
+app.get('/upload/:filename', (req, res) => {
+  res.redirect(301, `/uploads/${encodeURIComponent(req.params.filename)}`);
+});
+
 app.use('/uploads', express.static(UPLOADS_DIR));
+
 
 // ─── Admin Auth ───────────────────────────────────────────────────────────────
 const ADMIN_TOKENS = new Set();
@@ -391,7 +481,21 @@ app.post('/api/requests', handleUpload, async (req, res) => {
     const requests = await readData('requests', []);
     const nextSeq  = 1000 + (Array.isArray(requests) ? requests.length : 0) + 1;
     const newId    = `DEV-${new Date().getFullYear()}-${nextSeq}`;
-    const photos   = req.files ? req.files.map(f => `/uploads/${f.filename}`) : [];
+    // Process uploaded photos: save locally AND upload to GitHub
+    const photos = [];
+    if (req.files && req.files.length > 0) {
+      for (const f of req.files) {
+        photos.push(`/uploads/${f.filename}`);
+        if (USE_GITHUB) {
+          try {
+            const buffer = fs.readFileSync(f.path);
+            await githubUploadBinary(`uploads/${f.filename}`, buffer, `photo: #${newId} (${f.filename})`);
+          } catch (uploadErr) {
+            console.warn(`[Upload] Impossible d'uploader ${f.filename} vers GitHub:`, uploadErr.message);
+          }
+        }
+      }
+    }
 
     const newRequest = {
       id: newId, createdAt: new Date().toISOString(),
