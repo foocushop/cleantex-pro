@@ -1,5 +1,13 @@
 [
   {
+    "id": "NOTIF-1789509465353",
+    "timestamp": "2026-09-15T21:57:45.353Z",
+    "type": "NEW_REQUEST",
+    "subject": "🔔 Nouvelle demande : Mouhamad Diedhiou — Matelas & Sommiers (DEV-2026-1001)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Client: Mouhamad Diedhiou | Tél: 778288601 | Niaga | Matelas & Sommiers"
+  },
+  {
     "id": "NOTIF-1789509417174",
     "timestamp": "2026-09-15T21:56:57.174Z",
     "type": "NEW_REQUEST",
