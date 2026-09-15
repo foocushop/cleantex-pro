@@ -1,21 +1,5 @@
 [
   {
-    "id": "DEV-2026-1005",
-    "createdAt": "2026-09-15T15:49:59.943Z",
-    "nom": "Julien Lefebvre",
-    "email": "j.lefebvre@gmail.com",
-    "telephone": "06 98 74 12 55",
-    "service": "Canapé & Fauteuils",
-    "details": "Canapé panoramique 6 places velours gris",
-    "ville": "Versailles (78000)",
-    "dateSouhaitee": "Ce week-end si possible",
-    "message": "Taches d'eau et auréoles suite à une tentative de nettoyage maison. Besoin d'un pro d'urgence !",
-    "photos": [],
-    "status": "Nouveau",
-    "notesInternes": "",
-    "estimatifPrix": "À partir de 69€"
-  },
-  {
     "id": "DEV-2026-1004",
     "createdAt": "2026-09-15T15:44:48.528Z",
     "nom": "Julien Test Live",
