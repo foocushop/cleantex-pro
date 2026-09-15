@@ -1,18 +1,1 @@
-[
-  {
-    "id": "DEV-2026-1001",
-    "createdAt": "2026-09-15T15:39:55.849Z",
-    "nom": "Elodie Laurent",
-    "telephone": "06 45 89 12 34",
-    "email": "elodie.laurent@gmail.com",
-    "service": "Canapé & Fauteuils",
-    "details": "Canapé d'angle 5 places en tissu beige",
-    "ville": "Paris 15ème (75015)",
-    "dateSouhaitee": "2026-09-18",
-    "message": "Présence de plusieurs auréoles d'eau et taches de chocolat. Merci !",
-    "photos": [],
-    "status": "Nouveau",
-    "notesInternes": "À rappeler vers 18h",
-    "estimatifPrix": "À partir de 69€"
-  }
-]
+[]
