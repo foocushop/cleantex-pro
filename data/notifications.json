@@ -1,5 +1,13 @@
 [
   {
+    "id": "NOTIF-1789497265258",
+    "timestamp": "2026-09-15T18:34:25.258Z",
+    "type": "NEW_REQUEST",
+    "subject": "🔔 Nouvelle demande : fvdf dfbdg — Canapé & Fauteuils (DEV-2026-1012)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Client: fvdf dfbdg | Tél: 778288601 | Niaga | Canapé & Fauteuils"
+  },
+  {
     "id": "NOTIF-1789497188678",
     "timestamp": "2026-09-15T18:33:08.678Z",
     "type": "NEW_REQUEST",
