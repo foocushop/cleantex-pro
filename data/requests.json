@@ -1,21 +1,5 @@
 [
   {
-    "id": "DEV-2026-1014",
-    "createdAt": "2026-09-15T18:37:53.025Z",
-    "nom": "b vccvd",
-    "email": "foocushop@gmail.com",
-    "telephone": "778288601",
-    "service": "Sièges Auto & Véhicules",
-    "details": "",
-    "ville": "Niaga",
-    "dateSouhaitee": "",
-    "message": "",
-    "photos": [],
-    "status": "Nouveau",
-    "notesInternes": "",
-    "estimatifPrix": "À partir de 59€"
-  },
-  {
     "id": "DEV-2026-1013",
     "createdAt": "2026-09-15T18:34:43.317Z",
     "nom": "Mouhamad Diedhiou",
