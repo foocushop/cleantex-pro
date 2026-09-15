@@ -1,18 +1,1 @@
-[
-  {
-    "id": "DEV-2026-1003",
-    "createdAt": "2026-09-13T15:38:38.216Z",
-    "nom": "Sophie Delattre",
-    "telephone": "06 12 34 56 78",
-    "email": "sophie.delattre@free.fr",
-    "service": "Tapis & Moquettes",
-    "details": "Grand tapis persan laine 3x2m",
-    "ville": "Neuilly-sur-Seine (92200)",
-    "dateSouhaitee": "2026-09-16",
-    "message": "Tapis ancien taché par du café. Besoin d'un traitement délicat respectant les fibres.",
-    "photos": [],
-    "status": "Terminé",
-    "notesInternes": "Prestation effectuée le 15/09. Client ravi, a laissé 5 étoiles Google.",
-    "estimatifPrix": "85€"
-  }
-]
+[]
