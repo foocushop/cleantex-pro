@@ -14,21 +14,5 @@
     "status": "Nouveau",
     "notesInternes": "À rappeler vers 18h",
     "estimatifPrix": "À partir de 69€"
-  },
-  {
-    "id": "DEV-2026-1002",
-    "createdAt": "2026-09-14T18:39:55.850Z",
-    "nom": "Marc Benhamou",
-    "telephone": "07 82 11 90 45",
-    "email": "marc.benhamou@outlook.fr",
-    "service": "Matelas & Sommiers",
-    "details": "2 matelas 160x200",
-    "ville": "Boulogne-Billancourt (92100)",
-    "dateSouhaitee": "2026-09-19",
-    "message": "Désinfection et détachage complet pour emménagement.",
-    "photos": [],
-    "status": "Devis envoyé",
-    "notesInternes": "Devis 110€ envoyé par SMS.",
-    "estimatifPrix": "À partir de 49€"
   }
 ]
