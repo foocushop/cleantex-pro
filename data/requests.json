@@ -1,21 +1,5 @@
 [
   {
-    "id": "DEV-2026-1009",
-    "createdAt": "2026-09-15T18:31:12.040Z",
-    "nom": "Mouhamad Diedhiou",
-    "email": "foocushop@gmail.com",
-    "telephone": "778288601",
-    "service": "Tapis & Moquette",
-    "details": "",
-    "ville": "Niaga",
-    "dateSouhaitee": "",
-    "message": "",
-    "photos": [],
-    "status": "Nouveau",
-    "notesInternes": "",
-    "estimatifPrix": "À partir de 39€"
-  },
-  {
     "id": "DEV-2026-1008",
     "createdAt": "2026-09-15T17:55:08.855Z",
     "nom": "gvyhjb",
