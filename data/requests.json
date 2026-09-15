@@ -1,21 +1,5 @@
 [
   {
-    "id": "DEV-2026-1007",
-    "createdAt": "2026-09-15T17:47:47.655Z",
-    "nom": "Mouhamad Diedhiou",
-    "email": "foocushop@gmail.com",
-    "telephone": "778288601",
-    "service": "Canapé & Fauteuils",
-    "details": "",
-    "ville": "dakar",
-    "dateSouhaitee": "",
-    "message": "",
-    "photos": [],
-    "status": "Nouveau",
-    "notesInternes": "",
-    "estimatifPrix": "À partir de 69€"
-  },
-  {
     "id": "DEV-2026-1006",
     "createdAt": "2026-09-15T16:24:05.329Z",
     "nom": "Alexandre Dumas",
