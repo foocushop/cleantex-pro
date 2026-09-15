@@ -1,21 +1,5 @@
 [
   {
-    "id": "DEV-2026-1001",
-    "createdAt": "2026-09-15T12:38:38.216Z",
-    "nom": "Élodie Laurent",
-    "telephone": "06 45 89 12 34",
-    "email": "elodie.laurent@gmail.com",
-    "service": "Canapé & Fauteuils",
-    "details": "Canapé d'angle 5 places en tissu beige",
-    "ville": "Paris 15ème (75015)",
-    "dateSouhaitee": "2026-09-18",
-    "message": "Bonjour, présence de plusieurs auréoles d'eau et taches de chocolat faites par les enfants. Merci !",
-    "photos": [],
-    "status": "Nouveau",
-    "notesInternes": "À rappeler vers 18h en rentrant du travail",
-    "estimatifPrix": "129€"
-  },
-  {
     "id": "DEV-2026-1002",
     "createdAt": "2026-09-14T15:38:38.216Z",
     "nom": "Marc Benhamou",
