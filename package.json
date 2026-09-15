@@ -1,0 +1,16 @@
+{
+  "name": "cleantex-pro",
+  "version": "1.0.0",
+  "description": "Plateforme professionnelle de nettoyage textile à domicile avec système de gestion des demandes client",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/api.test.js && node test/edge_cases.test.js && node test/responsive_and_auth.test.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}

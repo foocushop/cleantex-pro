@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>CleanTex Pro | Nettoyage de Canapés, Matelas, Tapis & Véhicules à Domicile</title>
+  <meta name="description" content="Spécialiste du nettoyage et détachage de canapés, matelas, moquettes et sièges auto à domicile. Produits 100% bio et écologiques, séchage rapide en 2h.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300bba6'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+</head>
+<body>
+
+  <!-- ====================================================
+       Header & Navigation
+       ==================================================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="logo-text">CleanTex<span>Pro</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#services" class="nav-link">Prestations</a></li>
+        <li><a href="#process" class="nav-link">Notre Méthode</a></li>
+        <li><a href="#avant-apres" class="nav-link">Avant / Après</a></li>
+        <li><a href="#avis" class="nav-link">Avis</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="tel:0184742000" class="nav-phone">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          01 84 74 20 00
+        </a>
+
+        <!-- Sleek mobile phone quick-dial icon (shown only on mobile) -->
+        <a href="tel:0184742000" class="mobile-phone-btn" aria-label="Appeler CleanTex Pro au 01 84 74 20 00">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+        </a>
+
+        <!-- Desktop only CTA — hidden on mobile via CSS -->
+        <a href="#devis" class="btn btn-primary header-cta-btn">
+          Obtenir un devis
+        </a>
+
+        <!-- Pro Designer Animated 3-Bar Hamburger Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Dropdown Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#services">Nos Prestations & Tarifs</a>
+    <a href="#process">Fonctionnement en 3 étapes</a>
+    <a href="#avant-apres">Résultats Avant / Après</a>
+    <a href="#avis">Avis Clients Vérifiés</a>
+    <a href="#faq">Questions Fréquentes</a>
+    <a href="#devis" class="btn btn-primary mobile-nav-cta">
+      Demander un devis immédiat →
+    </a>
+    <a href="tel:0184742000" class="mobile-nav-call">
+      📞 Appeler le 01 84 74 20 00
+    </a>
+  </div>
+
+  <!-- ====================================================
+       Hero Section (Matches Mockup)
+       ==================================================== -->
+  <section class="section hero">
+    <div class="container hero-content">
+      <div class="badge-pill">
+        <span class="badge-dot"></span>
+        Nettoyage textile professionnel à domicile
+      </div>
+
+      <h1 class="hero-title">
+        Nettoyage en profondeur pour les textiles qui comptent.
+      </h1>
+
+      <p class="hero-subtitle">
+        Canapés, matelas, tapis et intérieurs de voiture : retrouvez l'éclat et la fraîcheur d'origine sans vous déplacer.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#devis" class="btn btn-primary">
+          Obtenir un devis
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#services" class="btn btn-secondary">
+          Tarifs & Prestations
+        </a>
+      </div>
+
+      <!-- Hero Visual with floating badge -->
+      <div class="hero-image-wrapper">
+        <img 
+          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=80" 
+          alt="Salon contemporain propre avec grand canapé et tapis remis à neuf"
+          onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80';"
+        >
+        <div class="hero-floating-badge">
+          <div class="icon-wrap">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Produits sains pour votre foyer</h4>
+            <p>100% bio, hypoallergéniques & sans danger</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       Trust Strip (Matches Navy Mockup Bar)
+       ==================================================== -->
+  <section class="trust-strip">
+    <div class="container trust-grid">
+      <!-- 1 -->
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <div class="trust-text">
+          <h4>Matériel professionnel</h4>
+          <p>Injection-extraction haute puissance</p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div class="trust-text">
+          <h4>Devis 100% gratuit</h4>
+          <p>Estimation immédiate sans engagement</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+          </svg>
+        </div>
+        <div class="trust-text">
+          <h4>Sans danger santé</h4>
+          <p>Certifié bio bébés & animaux</p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 15l-2 5l9-9l-9-9l2 5l-8 4l8 4z"/>
+          </svg>
+        </div>
+        <div class="trust-text">
+          <h4>Résultat garanti</h4>
+          <p>Ou réintervention offerte</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       Services Section (Matches Mockup 4 Cards)
+       ==================================================== -->
+  <section class="section services-section" id="services">
+    <div class="container">
+      <div class="text-center">
+        <div class="badge-pill">NOS PRESTATIONS</div>
+        <h2 class="section-title">Ce que nous prenons en charge</h2>
+        <p class="section-subtitle">
+          Chaque tissu a ses spécificités. Nos techniciens adaptent leurs méthodes pour un résultat impeccable.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Card 1: Matelas -->
+        <div class="service-card">
+          <div class="service-card-image">
+            <img 
+              src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80" 
+              alt="Nettoyage et désinfection de matelas"
+            >
+            <span class="service-price-tag">À partir de 49€</span>
+          </div>
+          <div class="service-card-body">
+            <div class="service-category-badge">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              Santé & Sommeil
+            </div>
+            <h3 class="service-title">Nettoyage de Matelas & Sommiers</h3>
+            <p class="service-description">
+              Élimination des acariens, auréoles d'humidité, sueur, bactéries et odeurs tenaces pour retrouver une literie saine et réparatrice.
+            </p>
+            <ul class="service-features">
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Traitement anti-acariens & antibactérien certifié
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Détachage des deux faces + sommier
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Sec et prêt à dormir le soir même
+              </li>
+            </ul>
+            <div class="service-card-footer">
+              <span style="font-size: 0.85rem; color: #64748b;">Durée : ~45 min</span>
+              <button class="btn btn-primary" style="padding: 8px 18px; font-size: 0.88rem;" data-select-service="Matelas & Sommiers">
+                Réserver ce service
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Canapés -->
+        <div class="service-card">
+          <div class="service-card-image">
+            <img 
+              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80" 
+              alt="Nettoyage canapé d'angle en tissu"
+            >
+            <span class="service-price-tag">À partir de 69€</span>
+          </div>
+          <div class="service-card-body">
+            <div class="service-category-badge">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+              Confort Salon
+            </div>
+            <h3 class="service-title">Nettoyage Canapés & Fauteuils</h3>
+            <p class="service-description">
+              Tissu, velours, cuir, alcantara. Ravivage des teintes d'origine, élimination des graisses, auréoles de café et salissures profondes.
+            </p>
+            <ul class="service-features">
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Injection-extraction haute puissance sans abîmer les fibres
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Désodorisation parfumée végétale
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Canapés droits, d'angle ou convertibles
+              </li>
+            </ul>
+            <div class="service-card-footer">
+              <span style="font-size: 0.85rem; color: #64748b;">Durée : ~1h15</span>
+              <button class="btn btn-primary" style="padding: 8px 18px; font-size: 0.88rem;" data-select-service="Canapé & Fauteuils">
+                Réserver ce service
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Tapis & Moquettes -->
+        <div class="service-card">
+          <div class="service-card-image">
+            <img 
+              src="https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80" 
+              alt="Nettoyage tapis salon et moquettes"
+            >
+            <span class="service-price-tag">À partir de 39€</span>
+          </div>
+          <div class="service-card-body">
+            <div class="service-category-badge">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+              Fibres & Sols
+            </div>
+            <h3 class="service-title">Détachage Tapis & Moquettes</h3>
+            <p class="service-description">
+              Nettoyage à l'eau tempérée et aspiration industrielle pour fibres délicates ou épaisses (laine, synthétique, berbère, soie).
+            </p>
+            <ul class="service-features">
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Dépoussiérage mécanique en profondeur
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Ravivage du velours et redressement des mèches
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Protection anti-salissure longue durée
+              </li>
+            </ul>
+            <div class="service-card-footer">
+              <span style="font-size: 0.85rem; color: #64748b;">Durée : ~45 min</span>
+              <button class="btn btn-primary" style="padding: 8px 18px; font-size: 0.88rem;" data-select-service="Tapis & Moquette">
+                Réserver ce service
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Sièges Auto -->
+        <div class="service-card">
+          <div class="service-card-image">
+            <img 
+              src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=800&q=80" 
+              alt="Nettoyage et pressing sièges auto"
+            >
+            <span class="service-price-tag">À partir de 59€</span>
+          </div>
+          <div class="service-card-body">
+            <div class="service-category-badge">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 18H3a2 2 0 01-2-2V8a2 2 0 012-2h3.19a2 2 0 011.664.89l.812 1.22H19a2 2 0 012 2v8a2 2 0 01-2 2h-2"/></svg>
+              Auto & Véhicules
+            </div>
+            <h3 class="service-title">Pressing Sièges Auto & Habitacle</h3>
+            <p class="service-description">
+              Détachage minutieux des sièges tissu et cuir, tapis de sol, banquette arrière et coffre. Idéal avant revente ou grand nettoyage de printemps.
+            </p>
+            <ul class="service-features">
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Élimination des taches de boisson, nourriture & boue
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Traitement désodorisant tabac et animaux de compagnie
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Intervention directe sur votre place de parking
+              </li>
+            </ul>
+            <div class="service-card-footer">
+              <span style="font-size: 0.85rem; color: #64748b;">Durée : ~1h00</span>
+              <button class="btn btn-primary" style="padding: 8px 18px; font-size: 0.88rem;" data-select-service="Sièges Auto & Véhicules">
+                Réserver ce service
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       Process Section (Matches Mockup 3 Steps)
+       ==================================================== -->
+  <section class="section process-section" id="process">
+    <div class="container">
+      <div class="text-center">
+        <div class="badge-pill">COMMENT ÇA MARCHE</div>
+        <h2 class="section-title">Un résultat parfait en 3 étapes simples</h2>
+        <p class="section-subtitle">
+          De la prise de contact au séchage complet, nous nous occupons de tout.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <!-- Step 1 -->
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3 class="step-title">Demande de devis</h3>
+          <p class="step-text">
+            Remplissez notre formulaire en 1 min ou écrivez-nous sur WhatsApp. Devis ferme et sans engagement transmis sous 1 heure.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3 class="step-title">Intervention sur place</h3>
+          <p class="step-text">
+            Notre technicien qualifié se déplace à votre domicile avec un équipement d'injection-extraction professionnel de pointe.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Séchage en quelques heures</h3>
+          <p class="step-text">
+            Vos textiles sont détachés, assainis, désinfectés et totalement secs et réutilisables en seulement 2 à 4 heures.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       Before / After Showcase (Matches Mockup)
+       ==================================================== -->
+  <section class="section comparison-section" id="avant-apres">
+    <div class="container">
+      <div class="text-center">
+        <div class="badge-pill">AVANT / APRÈS</div>
+        <h2 class="section-title">Voyez la différence avant et après intervention.</h2>
+        <p class="section-subtitle">
+          Faites glisser le curseur central pour observer le résultat de notre nettoyage en profondeur.
+        </p>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- Comparison 1: Tapis -->
+        <div class="comparison-card">
+          <div class="comparison-header">
+            <h4>Tapis & Moquettes</h4>
+            <span class="comparison-tag">Injection / Extraction</span>
+          </div>
+          <div class="compare-container" style="--pos: 50%;">
+            <!-- After (Clean) Image -->
+            <img class="compare-img-after" src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80" alt="Tapis nettoyé éclatant">
+            <!-- Before (Dirty) Image with clip-path -->
+            <img class="compare-img-before" src="https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80" alt="Tapis avant nettoyage">
+            
+            <span class="compare-badge-avant">AVANT</span>
+            <span class="compare-badge-apres">APRÈS LE NETTOYAGE</span>
+            
+            <div class="compare-divider-line"></div>
+            <div class="compare-handle">↔</div>
+          </div>
+        </div>
+
+        <!-- Comparison 2: Sièges Auto / Habitacle -->
+        <div class="comparison-card">
+          <div class="comparison-header">
+            <h4>Sièges Auto & Habitacle</h4>
+            <span class="comparison-tag">Détachage haute précision</span>
+          </div>
+          <div class="compare-container" style="--pos: 50%;">
+            <!-- After (Clean) Image -->
+            <img class="compare-img-after" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Siège véhicule rénové">
+            <!-- Before (Dirty) Image with clip-path -->
+            <img class="compare-img-before" src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=800&q=80" alt="Siège voiture avant nettoyage">
+            
+            <span class="compare-badge-avant">AVANT</span>
+            <span class="compare-badge-apres">APRÈS LE NETTOYAGE</span>
+            
+            <div class="compare-divider-line"></div>
+            <div class="compare-handle">↔</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       Reviews Section (Matches Mockup Navy Dark)
+       ==================================================== -->
+  <section class="section reviews-section" id="avis">
+    <div class="container text-center">
+      <div class="badge-pill dark">AVIS</div>
+      <h2 class="section-title">Ce que nos clients disent de notre travail.</h2>
+      <p class="section-subtitle">
+        Des dizaines de clients nous font confiance chaque semaine pour redonner vie à leurs textiles.
+      </p>
+
+      <div class="reviews-summary">
+        <div class="stars-row">★★★★★</div>
+        <span style="font-weight: 800; font-size: 1.05rem;">4.9 / 5</span>
+        <span style="color: #94a3b8; font-size: 0.88rem;">• Basé sur 340+ avis vérifiés</span>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div>
+            <div class="review-quote-icon">“</div>
+            <p class="review-text">
+              Mon canapé d'angle en tissu beige avait accumulé 4 ans de taches d'enfants et de café. Je pensais devoir en racheter un... L'artisan est venu le matin, et à midi il était comme sorti du magasin. Un vrai travail de pro !
+            </p>
+          </div>
+          <div class="review-author">
+            <div class="author-avatar">SD</div>
+            <div class="author-info" style="text-align: left;">
+              <h4>Sophie D.</h4>
+              <p>Paris 15ème • Canapé d'angle 5 places</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div>
+            <div class="review-quote-icon">“</div>
+            <p class="review-text">
+              Intervention très soignée pour notre matelas 180x200 après un dégât d'eau et des soucis d'allergies. Odeur ultra fraîche, plus une seule auréole et literie totalement sèche le soir même. Rien à redire.
+            </p>
+          </div>
+          <div class="review-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">MB</div>
+            <div class="author-info" style="text-align: left;">
+              <h4>Marc B.</h4>
+              <p>Boulogne-Billancourt • Matelas King Size</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div>
+            <div class="review-quote-icon">“</div>
+            <p class="review-text">
+              Nettoyage des sièges et de la moquette de ma voiture avant de la vendre. Le résultat a bluffé l'acheteur qui l'a prise au prix sans négocier. Le coût de la prestation a été rentabilisé au centuple !
+            </p>
+          </div>
+          <div class="review-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #f59e0b, #b45309);">KT</div>
+            <div class="author-info" style="text-align: left;">
+              <h4>Karim T.</h4>
+              <p>Saint-Germain-en-Laye • Intérieur Auto complet</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       Quote Request Form (Matches Mockup Layout & Form)
+       ==================================================== -->
+  <section class="section quote-section" id="devis">
+    <div class="container quote-wrapper">
+      <div class="text-center">
+        <div class="badge-pill">DEMANDE DE DEVIS</div>
+        <h2 class="section-title">Obtenez un devis gratuit</h2>
+        <p class="section-subtitle">
+          Remplissez ce formulaire et recevez une estimation personnalisée sous 2 heures.
+        </p>
+      </div>
+
+      <!-- Guarantee banner -->
+      <div class="quote-guarantee-pill">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+        </svg>
+        <span>
+          <strong>Déplacement offert sur tout le secteur.</strong> Aucun paiement à l'avance requis • Devis immédiat garanti sous 2h.
+        </span>
+      </div>
+
+      <!-- Main Form Card -->
+      <div class="quote-form-card">
+        <form id="quoteForm" enctype="multipart/form-data">
+          <div class="form-grid">
+            <!-- Nom -->
+            <div class="form-group">
+              <label for="formNom" class="form-label">Nom & Prénom <span class="required">*</span></label>
+              <input type="text" id="formNom" name="nom" class="form-input" placeholder="Ex: Claire Dupont" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="formEmail" class="form-label">Adresse E-mail</label>
+              <input type="email" id="formEmail" name="email" class="form-input" placeholder="Ex: claire.dupont@email.com">
+            </div>
+
+            <!-- Telephone -->
+            <div class="form-group">
+              <label for="formPhone" class="form-label">Numéro de Téléphone <span class="required">*</span></label>
+              <input type="tel" id="formPhone" name="telephone" class="form-input" placeholder="Ex: 06 12 34 56 78" required>
+            </div>
+
+            <!-- Service Dropdown -->
+            <div class="form-group">
+              <label for="formService" class="form-label">Type de prestation <span class="required">*</span></label>
+              <select id="formService" name="service" class="form-select" required>
+                <option value="" disabled selected>Sélectionnez votre textile...</option>
+                <option value="Canapé & Fauteuils">Canapé & Fauteuils</option>
+                <option value="Matelas & Sommiers">Matelas & Sommiers</option>
+                <option value="Tapis & Moquette">Tapis & Moquettes</option>
+                <option value="Sièges Auto & Véhicules">Sièges & Intérieur Véhicule</option>
+                <option value="Pack Complet Multi-textiles">Pack Complet Multi-textiles (Canapé + Tapis + Matelas)</option>
+              </select>
+            </div>
+
+            <!-- Details -->
+            <div class="form-group">
+              <label for="formDetails" class="form-label">Format / Nombre de places</label>
+              <input type="text" id="formDetails" name="details" class="form-input" placeholder="Ex: Canapé 3 places velours, matelas 160x200...">
+            </div>
+
+            <!-- Ville / Code Postal -->
+            <div class="form-group">
+              <label for="formVille" class="form-label">Ville ou Code Postal <span class="required">*</span></label>
+              <input type="text" id="formVille" name="ville" class="form-input" placeholder="Ex: 75015 Paris ou Versailles" required>
+            </div>
+
+            <!-- Date Souhaitée -->
+            <div class="form-group full-width">
+              <label for="formDate" class="form-label">Date d'intervention souhaitée (facultatif)</label>
+              <input type="date" id="formDate" name="dateSouhaitee" class="form-input">
+            </div>
+
+            <!-- Message / Stains details -->
+            <div class="form-group full-width">
+              <label for="formMessage" class="form-label">Message / Précision sur les taches</label>
+              <textarea id="formMessage" name="message" class="form-textarea" placeholder="Décrivez brièvement les taches (eau, café, gras, auréoles...) ou vos contraintes d'horaires..."></textarea>
+            </div>
+
+            <!-- Optional Photos Upload -->
+            <div class="form-group full-width">
+              <label class="form-label">Joindre des photos des textiles à nettoyer (facultatif)</label>
+              <label for="formPhotos" class="file-dropzone">
+                <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <p><strong>Cliquez ici pour ajouter une ou plusieurs photos</strong> (JPG, PNG)</p>
+                <span style="font-size: 0.78rem; color: #94a3b8;">Permet à nos techniciens de calibrer le bon matériel et les produits adaptés.</span>
+                <input type="file" id="formPhotos" name="photos" accept="image/*" multiple style="display: none;">
+              </label>
+              <div class="preview-thumbnails" id="photoPreviews"></div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="submitQuoteBtn" style="padding: 16px; font-size: 1.08rem;">
+            Envoyer ma demande →
+          </button>
+
+          <p class="form-disclaimer">
+            🔒 Vos données personnelles sont strictement confidentielles et ne sont jamais transmises à des tiers.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       FAQ Section (Matches Mockup Accordion)
+       ==================================================== -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="text-center">
+        <div class="badge-pill">FAQ</div>
+        <h2 class="section-title">Questions fréquemment posées</h2>
+        <p class="section-subtitle">
+          Retrouvez toutes les réponses pour préparer sereinement votre intervention.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <!-- Q1 -->
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>Combien de temps faut-il pour le séchage complet ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Grâce à nos machines industrielles d'extraction à double turbine, plus de 90% de l'humidité est immédiatement réaspirée pendant l'opération. Vos textiles (canapé, matelas, tapis) sont généralement totalement secs en <strong>2 à 4 heures</strong> à température ambiante normale.
+            </p>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Vos produits présentent-ils un risque pour mes enfants ou animaux ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Absolument aucun. Nous utilisons exclusivement des solutions <strong>100% végétales, biodégradables et hypoallergéniques</strong>, certifiées sans solvants chlorés ni perturbateurs endocriniens. Dès que le textile est sec, vos proches et vos animaux peuvent s'y installer sans aucune restriction.
+            </p>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Dois-je préparer ou déplacer les meubles avant votre passage ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Non, vous n'avez rien de lourd à déplacer. Nous vous recommandons simplement de dégager les petits objets autour du mobilier concerné. Nos techniciens protègent systématiquement votre sol avec des bâches absorbantes étanches.
+            </p>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Quelles sont les modalités de paiement ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              <strong>Aucun acompte n'est demandé à l'avance.</strong> Vous ne réglez votre prestation qu'à la fin, une fois que vous avez constaté et validé le résultat. Nous acceptons la Carte Bancaire (terminal sécurisé), les virements instantanés et les espèces. Une facture officielle acquittée vous est immédiatement transmise.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       Footer
+       ==================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="logo-text">CleanTex<span>Pro</span></div>
+        </a>
+        <p>
+          Spécialiste agréé du nettoyage, détachage et assainissement textile à domicile. Rénovation de canapés, matelas, tapis et véhicules partout en Île-de-France.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Prestations</h4>
+        <ul class="footer-links">
+          <li><a href="#services" data-select-service="Canapé & Fauteuils">Canapé & Fauteuils</a></li>
+          <li><a href="#services" data-select-service="Matelas & Sommiers">Matelas & Sommiers</a></li>
+          <li><a href="#services" data-select-service="Tapis & Moquette">Tapis & Moquettes</a></li>
+          <li><a href="#services" data-select-service="Sièges Auto & Véhicules">Intérieur Véhicules</a></li>
+          <li><a href="#services" data-select-service="Pack Complet Multi-textiles">Pack Multi-textiles</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Informations</h4>
+        <ul class="footer-links">
+          <li><a href="#process">Notre méthode</a></li>
+          <li><a href="#avant-apres">Résultats Avant/Après</a></li>
+          <li><a href="#avis">Avis clients</a></li>
+          <li><a href="#faq">Foire aux questions</a></li>
+          <li><a href="#devis">Devis en 1 min</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact & Horaires</h4>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <div>
+            <strong>01 84 74 20 00</strong><br>
+            <span style="font-size: 0.8rem; color: #64748b;">Lundi au Dimanche : 8h00 - 20h00</span>
+          </div>
+        </div>
+
+        <div class="footer-contact-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <div>contact@cleantex-pro.fr</div>
+        </div>
+
+        <div class="footer-contact-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <div>Paris & Toute l'Île-de-France</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© 2026 CleanTex Pro. Tous droits réservés. Service professionnel de nettoyage textile.</div>
+      <div>
+        <a href="#devis">Devis en ligne</a> • 
+        <a href="#services">Nos prestations</a> • 
+        <a href="#">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================
+       Success Confirmation Modal (Popup upon submitting)
+       ==================================================== -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-content">
+      <div class="modal-icon">✓</div>
+      <h3 class="modal-title">Demande bien reçue !</h3>
+      <div class="modal-ref" id="modalRefNumber">DEV-2026-1004</div>
+      <p class="modal-text">
+        Merci <strong id="modalClientName">Client</strong> ! Votre demande de devis a été enregistrée avec succès. Notre équipe examine votre demande et vous répondra sous <strong>1 heure</strong>.
+      </p>
+
+      <div class="modal-buttons">
+        <a href="#" target="_blank" class="btn btn-primary" id="modalWhatsAppBtn" style="background-color: #25d366; box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);">
+          💬 Échanger directement sur WhatsApp
+        </a>
+        <button type="button" class="btn btn-secondary" id="modalCloseBtn">
+          Fermer cette fenêtre
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

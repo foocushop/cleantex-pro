@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>CleanTex Pro | Espace Réception des Demandes Clients</title>
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300bba6'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+</head>
+<body class="admin-body">
+
+  <!-- ====================================================
+       Admin Top Navbar
+       ==================================================== -->
+  <header class="admin-navbar">
+    <div class="admin-brand">
+      <div class="admin-brand-name"><span>CleanTex</span> Pro</div>
+      <span class="badge-admin">Espace Gérant</span>
+    </div>
+
+    <div class="admin-nav-actions">
+      <div class="live-badge">
+        <span class="pulse-circle"></span>
+        <span class="live-badge-text">Réception active en temps réel</span>
+      </div>
+
+      <a href="/" class="btn-view-site" title="Voir le site client">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        <span class="btn-view-site-text">Site client</span>
+      </a>
+
+      <button class="btn-lock-screen" id="adminLogoutBtn" title="Verrouiller l'accès administrateur">
+        🔒 <span class="btn-lock-text">Verrouiller</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ====================================================
+       Admin Main Container
+       ==================================================== -->
+  <main class="admin-container">
+    <!-- Push & Sound Notification Opt-in Banner -->
+    <div class="notification-perm-banner" id="permBanner">
+      <div class="perm-banner-text">
+        <span style="font-size: 1.3rem; flex-shrink:0;">🔔</span>
+        <div>
+          <strong>Alertes en temps réel :</strong>
+          <span>Activez les notifications pour être alerté instantanément à chaque nouvelle demande.</span>
+        </div>
+      </div>
+      <button class="btn-action btn-accent" id="enableNotificationsBtn" style="padding: 8px 16px; font-size: 0.85rem; flex-shrink:0;">
+        Activer les alertes
+      </button>
+    </div>
+
+    <!-- Header Title & Action Buttons -->
+    <div class="admin-header-title">
+      <div>
+        <h1>Boîte de Réception Clients</h1>
+        <p>Chaque demande soumise via le formulaire arrive ici en temps réel.</p>
+      </div>
+
+      <div class="admin-quick-buttons">
+        <button class="btn-action btn-outline" id="refreshBtn" title="Actualiser la liste">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+          </svg>
+          Actualiser
+        </button>
+
+        <button class="btn-action btn-outline" id="exportCsvBtn" title="Exporter au format CSV">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          Export CSV
+        </button>
+
+        <button class="btn-action btn-accent" id="testSeedBtn">
+          + Simuler demande
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats Overview Cards -->
+    <div class="stats-grid">
+      <!-- Total -->
+      <div class="stat-card card-teal">
+        <div class="stat-info">
+          <h3>Total Requêtes</h3>
+          <div class="stat-number" id="statTotalCount">0</div>
+        </div>
+        <div class="stat-icon teal">📊</div>
+      </div>
+
+      <!-- Nouvelles -->
+      <div class="stat-card card-green">
+        <div class="stat-info">
+          <h3>À Traiter</h3>
+          <div class="stat-number" id="statNewCount" style="color: #047857;">0</div>
+        </div>
+        <div class="stat-icon green">🔔</div>
+      </div>
+
+      <!-- En cours / Devis -->
+      <div class="stat-card card-amber">
+        <div class="stat-info">
+          <h3>Devis en cours</h3>
+          <div class="stat-number" id="statInProgressCount" style="color: #b45309;">0</div>
+        </div>
+        <div class="stat-icon amber">⏳</div>
+      </div>
+
+      <!-- Terminées -->
+      <div class="stat-card card-blue">
+        <div class="stat-info">
+          <h3>Validées</h3>
+          <div class="stat-number" id="statDoneCount" style="color: #1d4ed8;">0</div>
+        </div>
+        <div class="stat-icon blue">✅</div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs — wrapped for mobile scroll -->
+    <div class="admin-tabs-wrapper">
+      <div class="admin-tabs">
+        <button class="admin-tab-btn active" data-tab="requests">
+          📥 Demandes reçues
+          <span class="tab-badge" id="tabNewBadge">0</span>
+        </button>
+
+        <button class="admin-tab-btn" data-tab="notifications">
+          🔔 Journal d'alertes
+        </button>
+
+        <button class="admin-tab-btn" data-tab="settings">
+          ⚙️ Paramètres
+        </button>
+      </div>
+    </div>
+
+    <!-- TAB 1: Requests View -->
+    <div id="tabRequestsView">
+      <!-- Search & Status Filter Bar -->
+      <div class="filter-bar">
+        <div class="search-box">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input type="text" id="adminSearchInput" placeholder="Nom, téléphone, ville, ID…">
+        </div>
+
+        <!-- Scrollable pills -->
+        <div class="status-pills-scroller">
+          <div class="status-pills">
+            <button class="status-pill-btn active" data-status="Tous">Toutes</button>
+            <button class="status-pill-btn" data-status="Nouveau">🟢 Nouveau</button>
+            <button class="status-pill-btn" data-status="En cours">🔵 En cours</button>
+            <button class="status-pill-btn" data-status="Devis envoyé">🟡 Devis envoyé</button>
+            <button class="status-pill-btn" data-status="Terminé">🟣 Terminé</button>
+            <button class="status-pill-btn" data-status="Archivé">⚪ Archivé</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Container where incoming requests are dynamically inserted -->
+      <div class="requests-list" id="requestsContainer">
+        <!-- Injected via admin.js -->
+      </div>
+    </div>
+
+    <!-- TAB 2: Notifications Log View -->
+    <div id="tabNotificationsView" style="display: none;">
+      <div style="margin-bottom: 16px;">
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--navy-dark); margin-bottom: 4px;">
+          Historique des alertes & notifications de réception
+        </h3>
+        <p style="font-size: 0.9rem; color: var(--text-body);">
+          Chaque fois qu'un internaute clique sur <em>« Envoyer ma demande »</em>, une alerte est enregistrée ici instantanément avec tous les contacts du client.
+        </p>
+      </div>
+      <div class="notif-inbox-list" id="notificationsContainer">
+        <!-- Injected via admin.js -->
+      </div>
+    </div>
+
+    <!-- TAB 3: Settings & Documentation -->
+    <div id="tabSettingsView" style="display: none;">
+      <div class="settings-layout-grid">
+        <!-- Card 1: Live Reception Settings Form -->
+        <div class="settings-card">
+          <h2 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; color: var(--navy-dark);">
+            ⚙️ Paramètres des canaux de réception
+          </h2>
+          <p style="font-size: 0.9rem; color: var(--text-body); margin-bottom: 20px;">
+            Configurez vos coordonnées et vos passerelles d'alertes instantanées.
+          </p>
+
+          <form id="adminSettingsForm">
+            <div class="settings-form-group">
+              <label for="settingEmail">E-mail de notification du gérant</label>
+              <input type="email" id="settingEmail" class="form-control" placeholder="contact@cleantex-pro.fr">
+              <small>Adresse où sont expédiés les récapitulatifs de chaque nouvelle demande.</small>
+            </div>
+
+            <div class="settings-form-group">
+              <label for="settingWhatsapp">Numéro WhatsApp Réception (avec indicatif pays, ex: 336...)</label>
+              <input type="text" id="settingWhatsapp" class="form-control" placeholder="33184742000">
+              <small>Numéro vers lequel vos clients sont redirigés en 1 clic pour discuter.</small>
+            </div>
+
+            <div class="settings-form-group">
+              <label for="settingPhone">Numéro de Téléphone affiché sur le site</label>
+              <input type="text" id="settingPhone" class="form-control" placeholder="01 84 74 20 00">
+            </div>
+
+            <div class="settings-form-group">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                <label for="settingWebhookUrl" style="margin-bottom: 0;">Webhook d'alerte instantanée (Discord / Slack / Zapier / Make)</label>
+                <label class="switch-label">
+                  <input type="checkbox" id="settingWebhookEnabled">
+                  <span>Activer</span>
+                </label>
+              </div>
+              <input type="url" id="settingWebhookUrl" class="form-control" placeholder="https://discord.com/api/webhooks/... ou webhook Zapier/Make">
+              <small>Permet de recevoir une notification sur votre téléphone via Discord, Slack ou un bot Telegram.</small>
+            </div>
+
+            <div class="settings-form-actions">
+              <button type="submit" class="btn-action btn-accent" id="saveSettingsBtn">
+                💾 Enregistrer les paramètres
+              </button>
+              <button type="button" class="btn-action btn-outline" id="testNotificationBtn">
+                🧪 Tester la réception (Alerte test)
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Card 2: Channels explanation -->
+        <div class="settings-card">
+          <h2 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; color: var(--navy-dark);">
+            📱 Vos 4 canaux de réception garantis
+          </h2>
+          <p style="font-size: 0.9rem; color: var(--text-body); margin-bottom: 20px;">
+            Comment êtes-vous averti lorsqu'un client valide son devis ?
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div class="channel-box" style="border-left-color: var(--primary);">
+              <div style="font-size: 1.4rem;">🖥️</div>
+              <div>
+                <strong>1. Ce tableau de bord en temps réel</strong>
+                <p>Mise à jour automatique toutes les 8 secondes avec carillon sonore et notification push sur le bureau.</p>
+              </div>
+            </div>
+
+            <div class="channel-box" style="border-left-color: #25d366;">
+              <div style="font-size: 1.4rem;">💬</div>
+              <div>
+                <strong>2. WhatsApp direct client & gérant</strong>
+                <p>Le client reçoit un lien immédiat avec sa référence de devis, et vous pouvez lui répondre en 1 clic.</p>
+              </div>
+            </div>
+
+            <div class="channel-box" style="border-left-color: #3b82f6;">
+              <div style="font-size: 1.4rem;">🔔</div>
+              <div>
+                <strong>3. Passerelle Webhook & Discord/Slack</strong>
+                <p>Recevez un message formaté avec toutes les coordonnées du client dans votre salon Discord ou Slack dédié.</p>
+              </div>
+            </div>
+
+            <div class="channel-box" style="border-left-color: #f59e0b;">
+              <div style="font-size: 1.4rem;">📂</div>
+              <div>
+                <strong>4. Sauvegarde permanente & Export CSV</strong>
+                <p>Toutes les données sont stockées dans <code>data/requests.json</code>. Exportez-les d'un clic pour Excel.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Change Security PIN -->
+        <div class="settings-card">
+          <h2 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; color: var(--navy-dark);">
+            🔐 Sécurité & Code PIN d'accès
+          </h2>
+          <p style="font-size: 0.9rem; color: var(--text-body); margin-bottom: 20px;">
+            Modifiez le code PIN requis pour déverrouiller l'espace d'administration.
+          </p>
+
+          <form id="adminChangePinForm">
+            <div class="settings-form-group">
+              <label for="currentPin">Code PIN actuel</label>
+              <input type="password" id="currentPin" class="form-control" placeholder="Code actuel (par défaut : 2026)" required>
+            </div>
+
+            <div class="settings-form-group">
+              <label for="newPin">Nouveau code PIN (4 chiffres ou plus)</label>
+              <input type="password" id="newPin" class="form-control" placeholder="Ex: 8492" minlength="4" required>
+            </div>
+
+            <div class="settings-form-actions">
+              <button type="submit" class="btn-action btn-accent" id="savePinBtn">
+                🔒 Mettre à jour le code PIN
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ====================================================
+       Printable Intervention Voucher Modal
+       ==================================================== -->
+  <div class="modal-overlay" id="voucherModal">
+    <div class="modal-content printable-voucher" id="voucherPrintArea">
+      <div class="voucher-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div class="voucher-logo-icon">✨</div>
+          <div>
+            <h2 style="font-size: 1.35rem; font-weight: 800; color: #0b1a2b;">CleanTex Pro</h2>
+            <p style="font-size: 0.8rem; color: #64748b;">Fiche d'intervention & Bon de passage</p>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div class="voucher-ref" id="voucherRef">DEV-2026-1001</div>
+          <div style="font-size: 0.8rem; color: #64748b;" id="voucherDate">15/09/2026</div>
+        </div>
+      </div>
+
+      <div class="voucher-grid">
+        <div class="voucher-block">
+          <h4>Coordonnées Client</h4>
+          <p><strong>Nom :</strong> <span id="vClientName">-</span></p>
+          <p><strong>Téléphone :</strong> <span id="vClientPhone">-</span></p>
+          <p><strong>Email :</strong> <span id="vClientEmail">-</span></p>
+          <p><strong>Lieu / Ville :</strong> <span id="vClientCity">-</span></p>
+        </div>
+
+        <div class="voucher-block">
+          <h4>Prestation demandée</h4>
+          <p><strong>Service :</strong> <span id="vService">-</span></p>
+          <p><strong>Détails :</strong> <span id="vDetails">-</span></p>
+          <p><strong>Date souhaitée :</strong> <span id="vDateSouhaitee">-</span></p>
+          <p><strong>Tarif estimatif :</strong> <span id="vEstimate" style="color: #047857; font-weight: 700;">-</span></p>
+        </div>
+      </div>
+
+      <div class="voucher-block" style="margin-top: 14px;">
+        <h4>Description des taches & Message du client</h4>
+        <p id="vClientMessage" style="font-style: italic; color: #334155;">-</p>
+      </div>
+
+      <div class="voucher-block" style="margin-top: 14px;">
+        <h4>Notes internes / Consignes d'intervention</h4>
+        <p id="vNotesInternes" style="color: #475569;">-</p>
+      </div>
+
+      <div class="voucher-checklist">
+        <h4>Checklist Technicien</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.82rem; margin-top: 6px;">
+          <div>☐ 1. Diagnostic des fibres & des taches</div>
+          <div>☐ 2. Aspiration mécanique haute puissance</div>
+          <div>☐ 3. Brossage & injection produit bio</div>
+          <div>☐ 4. Extraction haute pression à 90%</div>
+          <div>☐ 5. Contrôle séchage & résultat client</div>
+          <div>☐ 6. Règlement perçu & facture remise</div>
+        </div>
+      </div>
+
+      <div class="voucher-signatures">
+        <div class="signature-box">
+          <p>Signature & Bon pour accord du Client :</p>
+          <div class="signature-line"></div>
+        </div>
+        <div class="signature-box">
+          <p>Signature du Technicien CleanTex Pro :</p>
+          <div class="signature-line"></div>
+        </div>
+      </div>
+
+      <div class="voucher-actions no-print">
+        <button class="btn-action btn-accent" onclick="window.print()">🖨️ Imprimer la fiche</button>
+        <button class="btn-action btn-outline" id="closeVoucherBtn">Fermer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================
+       Admin Security Lock Overlay (PIN Authentication)
+       ==================================================== -->
+  <div class="admin-lock-overlay" id="adminLockOverlay">
+    <div class="admin-lock-card">
+      <div class="lock-shield-icon">
+        <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+        </svg>
+      </div>
+      <div class="lock-brand">
+        <span style="color: #00bba6;">CleanTex</span> Pro
+      </div>
+      <h2 class="lock-title">Espace Gérant Sécurisé</h2>
+      <p class="lock-subtitle">
+        Cet espace est strictement réservé à la direction CleanTex Pro. Veuillez saisir votre code PIN pour accéder aux demandes clients.
+      </p>
+
+      <form id="adminLoginForm" autocomplete="off">
+        <div class="pin-input-group">
+          <input 
+            type="password" 
+            id="adminPinInput" 
+            class="pin-input" 
+            placeholder="Code PIN d'accès" 
+            maxlength="20"
+            required 
+            autocomplete="current-password"
+          >
+          <button type="button" class="btn-toggle-pin" id="togglePinVisBtn" aria-label="Afficher ou masquer le code PIN">
+            👁️
+          </button>
+        </div>
+
+        <div class="lock-error" id="lockErrorMsg"></div>
+
+        <button type="submit" class="btn-action btn-accent btn-unlock" id="unlockAdminBtn">
+          <span>Déverrouiller la boîte</span>
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+
+      <div class="lock-footer-hint">
+        🔒 Code PIN par défaut : <strong>2026</strong> (modifiable dans l'onglet Paramètres)
+      </div>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
