@@ -1,5 +1,13 @@
 [
   {
+    "id": "NOTIF-1789497473646",
+    "timestamp": "2026-09-15T18:37:53.646Z",
+    "type": "NEW_REQUEST",
+    "subject": "🔔 Nouvelle demande : b vccvd — Sièges Auto & Véhicules (DEV-2026-1014)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Client: b vccvd | Tél: 778288601 | Niaga | Sièges Auto & Véhicules"
+  },
+  {
     "id": "NOTIF-1789497265258",
     "timestamp": "2026-09-15T18:34:25.258Z",
     "type": "NEW_REQUEST",
