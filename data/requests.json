@@ -30,21 +30,5 @@
     "status": "Devis envoyé",
     "notesInternes": "Devis 110€ envoyé par SMS.",
     "estimatifPrix": "À partir de 49€"
-  },
-  {
-    "id": "DEV-2026-1003",
-    "createdAt": "2026-09-13T18:39:55.850Z",
-    "nom": "Sophie Delattre",
-    "telephone": "06 12 34 56 78",
-    "email": "sophie.delattre@free.fr",
-    "service": "Tapis & Moquettes",
-    "details": "Grand tapis persan laine 3x2m",
-    "ville": "Neuilly-sur-Seine (92200)",
-    "dateSouhaitee": "2026-09-16",
-    "message": "Tapis ancien taché par du café. Traitement délicat requis.",
-    "photos": [],
-    "status": "Terminé",
-    "notesInternes": "Client ravi, a laissé 5 étoiles Google.",
-    "estimatifPrix": "À partir de 39€"
   }
 ]
