@@ -84,13 +84,6 @@ function initActions() {
     });
   }
 
-  const testSeedBtn = document.getElementById('testSeedBtn');
-  if (testSeedBtn) {
-    testSeedBtn.addEventListener('click', async () => {
-      await simulateNewCustomerLead();
-    });
-  }
-
   const exportCsvBtn = document.getElementById('exportCsvBtn');
   if (exportCsvBtn) {
     exportCsvBtn.addEventListener('click', exportRequestsToCSV);
@@ -182,11 +175,8 @@ function renderRequests(requests) {
         <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
           <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
         </svg>
-        <h3>Aucune demande trouvée</h3>
-        <p>Aucune demande ne correspond à vos filtres actuels. Attendez une nouvelle requête ou créez-en une test pour essayer.</p>
-        <button class="btn-action btn-accent" onclick="simulateNewCustomerLead()">
-          + Simuler une demande client
-        </button>
+        <h3>Aucune demande pour le moment</h3>
+        <p>Les nouvelles demandes déposées par vos clients apparaîtront ici automatiquement en temps réel.</p>
       </div>
     `;
     return;
@@ -382,62 +372,8 @@ async function deleteRequest(id) {
 }
 
 // ----------------------------------------------------
-// 7. Simulate New Customer Lead (Instant Test Demo)
 // ----------------------------------------------------
-async function simulateNewCustomerLead() {
-  const sampleClients = [
-    {
-      nom: 'Julien Lefebvre',
-      telephone: '06 98 74 12 55',
-      email: 'j.lefebvre@gmail.com',
-      service: 'Canapé & Fauteuils',
-      details: 'Canapé panoramique 6 places velours gris',
-      ville: 'Versailles (78000)',
-      dateSouhaitee: 'Ce week-end si possible',
-      message: 'Taches d\'eau et auréoles suite à une tentative de nettoyage maison. Besoin d\'un pro d\'urgence !'
-    },
-    {
-      nom: 'Sarah Benali',
-      telephone: '07 55 23 88 19',
-      email: 'sarah.benali@outlook.fr',
-      service: 'Sièges & Habitacle Auto',
-      details: 'Peugeot 3008 - Intérieur complet',
-      ville: 'Levallois-Perret (92300)',
-      dateSouhaitee: 'Mardi prochain 14h',
-      message: 'Sièges tachés de café + poils de chien dans le coffre. Quel est votre tarif pour le pack complet ?'
-    },
-    {
-      nom: 'Antoine Moreau',
-      telephone: '06 31 40 88 22',
-      email: 'a.moreau@wanadoo.fr',
-      service: 'Matelas & Sommiers',
-      details: 'Matelas King Size 180x200',
-      ville: 'Paris 8ème (75008)',
-      dateSouhaitee: 'Dès que possible',
-      message: 'Désinfection acariens et élimination de taches de transpiration. Intervention à domicile.'
-    }
-  ];
-
-  const pick = sampleClients[Math.floor(Math.random() * sampleClients.length)];
-
-  try {
-    const res = await fetch('/api/requests', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(pick)
-    });
-    const data = await res.json();
-    if (data.success) {
-      showToast(`🎉 Demande simulée reçue : ${data.request.nom} (${data.request.id})`);
-      loadDashboardData();
-    }
-  } catch (err) {
-    showToast('Erreur lors de la simulation');
-  }
-}
-
-// ----------------------------------------------------
-// 8. Notifications Log Viewer
+// 7. Notifications Log Viewer
 // ----------------------------------------------------
 async function loadNotifications() {
   const container = document.getElementById('notificationsContainer');

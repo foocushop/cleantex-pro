@@ -103,7 +103,11 @@ async function githubRead(key) {
   try {
     const { status, body } = await githubRequest('GET', ghPath);
     if (status === 200 && body.content) {
-      const json = JSON.parse(Buffer.from(body.content, 'base64').toString('utf8'));
+      const raw = Buffer.from(body.content, 'base64').toString('utf8').trim();
+      if (!raw) {
+        return { data: key === 'settings' ? getDefaultSettings() : [], sha: body.sha };
+      }
+      const json = JSON.parse(raw);
       return { data: json, sha: body.sha };
     }
     if (status === 404) {
@@ -208,18 +212,11 @@ async function initStorage() {
   for (const key of ['settings', 'requests', 'notifications']) {
     const fallback = key === 'settings' ? getDefaultSettings() : [];
     const data = await readData(key, fallback);
-    if (data !== null) {
-      cache[key].data = data;
-      cache[key].ts   = Date.now();
-    }
+    cache[key].data = (data !== null && Array.isArray(data)) ? data : (data || fallback);
+    cache[key].ts   = Date.now();
   }
 
-  // Seed demo data if requests are empty
-  if (!cache.requests.data || cache.requests.data.length === 0) {
-    await seedDemoData();
-  }
-
-  console.log(`[CleanTex Pro] Stockage initialisé — ${(cache.requests.data || []).length} demande(s) chargée(s)`);
+  console.log(`[CleanTex Pro] Stockage initialisé — ${(cache.requests.data || []).length} demande(s) en mémoire`);
 }
 
 // ─── Local file helpers (fallback / dev mode) ─────────────────────────────────
@@ -230,7 +227,12 @@ function readLocalFile(filePath, fallback = []) {
       fs.writeFileSync(filePath, JSON.stringify(fallback, null, 2), 'utf8');
       return fallback;
     }
-    return JSON.parse(fs.readFileSync(filePath, 'utf8') || '[]');
+    const raw = fs.readFileSync(filePath, 'utf8').trim();
+    if (!raw) {
+      fs.writeFileSync(filePath, JSON.stringify(fallback, null, 2), 'utf8');
+      return fallback;
+    }
+    return JSON.parse(raw);
   } catch (err) {
     console.error(`[Local] Read error ${filePath}:`, err.message);
     return fallback;
@@ -271,47 +273,6 @@ async function getSettings() {
   return { ...defaults, ...s };
 }
 
-async function seedDemoData() {
-  const seed = [
-    {
-      id: 'DEV-2026-1001',
-      createdAt: new Date(Date.now() - 3600000 * 3).toISOString(),
-      nom: 'Elodie Laurent', telephone: '06 45 89 12 34', email: 'elodie.laurent@gmail.com',
-      service: 'Canapé & Fauteuils', details: 'Canapé d\'angle 5 places en tissu beige',
-      ville: 'Paris 15ème (75015)', dateSouhaitee: '2026-09-18',
-      message: 'Présence de plusieurs auréoles d\'eau et taches de chocolat. Merci !',
-      photos: [], status: 'Nouveau', notesInternes: 'À rappeler vers 18h', estimatifPrix: 'À partir de 69€'
-    },
-    {
-      id: 'DEV-2026-1002',
-      createdAt: new Date(Date.now() - 3600000 * 24).toISOString(),
-      nom: 'Marc Benhamou', telephone: '07 82 11 90 45', email: 'marc.benhamou@outlook.fr',
-      service: 'Matelas & Sommiers', details: '2 matelas 160x200',
-      ville: 'Boulogne-Billancourt (92100)', dateSouhaitee: '2026-09-19',
-      message: 'Désinfection et détachage complet pour emménagement.',
-      photos: [], status: 'Devis envoyé', notesInternes: 'Devis 110€ envoyé par SMS.', estimatifPrix: 'À partir de 49€'
-    },
-    {
-      id: 'DEV-2026-1003',
-      createdAt: new Date(Date.now() - 3600000 * 48).toISOString(),
-      nom: 'Sophie Delattre', telephone: '06 12 34 56 78', email: 'sophie.delattre@free.fr',
-      service: 'Tapis & Moquettes', details: 'Grand tapis persan laine 3x2m',
-      ville: 'Neuilly-sur-Seine (92200)', dateSouhaitee: '2026-09-16',
-      message: 'Tapis ancien taché par du café. Traitement délicat requis.',
-      photos: [], status: 'Terminé', notesInternes: 'Client ravi, a laissé 5 étoiles Google.', estimatifPrix: 'À partir de 39€'
-    }
-  ];
-
-  const notifs = [{
-    id: 'NOTIF-1', timestamp: new Date().toISOString(), type: 'EMAIL_SIMULATION',
-    subject: '🔔 Nouvelle demande - Elodie Laurent (#DEV-2026-1001)',
-    to: 'contact@cleantex-pro.fr',
-    content: 'Nouvelle demande reçue pour Canapé & Fauteuils à Paris 15ème. Tél: 06 45 89 12 34.'
-  }];
-
-  await writeData('requests', seed, 'init: données de démonstration');
-  await writeData('notifications', notifs, 'init: notification de démonstration');
-}
 
 // ═══════════════════════════════════════════════════════════════════════════════
 //  WEBHOOK DISPATCHER
