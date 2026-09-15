@@ -1,21 +1,5 @@
 [
   {
-    "id": "DEV-2026-1004",
-    "createdAt": "2026-09-15T15:44:48.528Z",
-    "nom": "Julien Test Live",
-    "email": "",
-    "telephone": "0699001122",
-    "service": "Canapé & Fauteuils",
-    "details": "",
-    "ville": "Paris",
-    "dateSouhaitee": "",
-    "message": "",
-    "photos": [],
-    "status": "Nouveau",
-    "notesInternes": "",
-    "estimatifPrix": "À partir de 69€"
-  },
-  {
     "id": "DEV-2026-1001",
     "createdAt": "2026-09-15T12:38:38.216Z",
     "nom": "Élodie Laurent",
