@@ -1,4 +1,4 @@
-﻿const express = require('express');
+const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
@@ -685,14 +685,56 @@ app.use((err, req, res, next) => {
   });
 });
 
+// ------------------------------------------------------------------
+// Health check endpoint (used by self-ping + Render health monitor)
+// ------------------------------------------------------------------
+app.get('/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    uptime: Math.floor(process.uptime()),
+    timestamp: new Date().toISOString(),
+    env: process.env.NODE_ENV || 'development'
+  });
+});
+
+// ------------------------------------------------------------------
 // Start server
+// ------------------------------------------------------------------
 if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`====================================================`);
     console.log(` CleanTex Pro - Serveur actif sur http://localhost:${PORT}`);
     console.log(` Site client : http://localhost:${PORT}`);
-    console.log(` Espace Admin / RÃ©ception : http://localhost:${PORT}/admin`);
+    console.log(` Espace Admin : http://localhost:${PORT}/admin`);
+    console.log(` Health check : http://localhost:${PORT}/health`);
     console.log(`====================================================`);
+
+    // ------------------------------------------------------------------
+    // Self-ping anti-dormance (Render free tier s'endort après 15 min)
+    // On se ping toutes les 14 minutes pour rester éveillé 24h/24.
+    // RENDER_EXTERNAL_URL est injectée automatiquement par Render.
+    // En local, on ne pingue pas (inutile et évite le bruit dans les logs).
+    // ------------------------------------------------------------------
+    const selfPingUrl = process.env.RENDER_EXTERNAL_URL
+      ? `${process.env.RENDER_EXTERNAL_URL}/health`
+      : null;
+
+    if (selfPingUrl) {
+      const PING_INTERVAL_MS = 14 * 60 * 1000; // 14 minutes
+
+      setInterval(() => {
+        const http = selfPingUrl.startsWith('https') ? require('https') : require('http');
+        http.get(selfPingUrl, (res) => {
+          console.log(`[Self-Ping] ${new Date().toISOString()} → ${selfPingUrl} — ${res.statusCode}`);
+        }).on('error', (err) => {
+          console.warn(`[Self-Ping] Echec : ${err.message}`);
+        });
+      }, PING_INTERVAL_MS);
+
+      console.log(` Self-ping actif toutes les 14 min → ${selfPingUrl}`);
+    } else {
+      console.log(` Self-ping desactive (mode local - RENDER_EXTERNAL_URL non definie)`);
+    }
   });
 }
 
