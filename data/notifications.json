@@ -1,5 +1,13 @@
 [
   {
+    "id": "NOTIF-1789497188678",
+    "timestamp": "2026-09-15T18:33:08.678Z",
+    "type": "NEW_REQUEST",
+    "subject": "🔔 Nouvelle demande : fdgvf dfbd — Matelas & Sommiers (DEV-2026-1011)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Client: fdgvf dfbd | Tél: 778288601 | Niaga | Matelas & Sommiers"
+  },
+  {
     "id": "NOTIF-1789497109573",
     "timestamp": "2026-09-15T18:31:49.573Z",
     "type": "NEW_REQUEST",
