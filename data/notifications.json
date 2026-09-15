@@ -1,0 +1,242 @@
+[
+  {
+    "id": "NOTIF-1789494908858",
+    "timestamp": "2026-09-15T17:55:08.858Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : gvyhjb - Canapé & Fauteuils (DEV-2026-1008)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: gvyhjb | Tél: 777777777 | Email: N/A | Lieu: fffft | Service: Canapé & Fauteuils | Message: Aucun message"
+  },
+  {
+    "id": "NOTIF-1789494467658",
+    "timestamp": "2026-09-15T17:47:47.658Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Mouhamad Diedhiou - Canapé & Fauteuils (DEV-2026-1007)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Mouhamad Diedhiou | Tél: 778288601 | Email: foocushop@gmail.com | Lieu: dakar | Service: Canapé & Fauteuils | Message: Aucun message"
+  },
+  {
+    "id": "NOTIF-1789492422350",
+    "timestamp": "2026-09-15T17:13:42.350Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Lucas Martin - Tapis & Moquette (DEV-2026-1007)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Lucas Martin | Tél: 07 00 11 22 33 | Email: N/A | Lieu: Paris | Service: Tapis & Moquette | Message: Aucun message"
+  },
+  {
+    "id": "NOTIF-1789492422283",
+    "timestamp": "2026-09-15T17:13:42.283Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Jean-François d'Hauteville & Cécile - Canapé & Fauteuils (DEV-2026-1007)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Jean-François d'Hauteville & Cécile | Tél: 06.99.88.77.66 | Email: jf.hauteville@domaine-français.fr | Lieu: Saint-Germain-en-Laye (78100) | Service: Canapé & Fauteuils | Message: Café renversé + odeur d'humidité 🐕☕"
+  },
+  {
+    "id": "NOTIF-1789492421307",
+    "timestamp": "2026-09-15T17:13:41.307Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Camille Vasseur - Canapé & Fauteuils (DEV-2026-1007)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Camille Vasseur | Tél: 06 11 22 33 44 | Email: camille.vasseur@test.com | Lieu: Boulogne-Billancourt | Service: Canapé & Fauteuils | Message: Tache de vin rouge récente sur l'assise droite."
+  },
+  {
+    "id": "NOTIF-1789492215807",
+    "timestamp": "2026-09-15T17:10:15.807Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Lucas Martin - Tapis & Moquette (DEV-2026-1007)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Lucas Martin | Tél: 07 00 11 22 33 | Email: N/A | Lieu: Paris | Service: Tapis & Moquette | Message: Aucun message"
+  },
+  {
+    "id": "NOTIF-1789492215751",
+    "timestamp": "2026-09-15T17:10:15.751Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Jean-François d'Hauteville & Cécile - Canapé & Fauteuils (DEV-2026-1007)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Jean-François d'Hauteville & Cécile | Tél: 06.99.88.77.66 | Email: jf.hauteville@domaine-français.fr | Lieu: Saint-Germain-en-Laye (78100) | Service: Canapé & Fauteuils | Message: Café renversé + odeur d'humidité 🐕☕"
+  },
+  {
+    "id": "NOTIF-1789492214843",
+    "timestamp": "2026-09-15T17:10:14.843Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Camille Vasseur - Canapé & Fauteuils (DEV-2026-1007)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Camille Vasseur | Tél: 06 11 22 33 44 | Email: camille.vasseur@test.com | Lieu: Boulogne-Billancourt | Service: Canapé & Fauteuils | Message: Tache de vin rouge récente sur l'assise droite."
+  },
+  {
+    "id": "NOTIF-1789492078728",
+    "timestamp": "2026-09-15T17:07:58.728Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Lucas Martin - Tapis & Moquette (DEV-2026-1007)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Lucas Martin | Tél: 07 00 11 22 33 | Email: N/A | Lieu: Paris | Service: Tapis & Moquette | Message: Aucun message"
+  },
+  {
+    "id": "NOTIF-1789492078655",
+    "timestamp": "2026-09-15T17:07:58.655Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Jean-François d'Hauteville & Cécile - Canapé & Fauteuils (DEV-2026-1007)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Jean-François d'Hauteville & Cécile | Tél: 06.99.88.77.66 | Email: jf.hauteville@domaine-français.fr | Lieu: Saint-Germain-en-Laye (78100) | Service: Canapé & Fauteuils | Message: Café renversé + odeur d'humidité 🐕☕"
+  },
+  {
+    "id": "NOTIF-1789492077546",
+    "timestamp": "2026-09-15T17:07:57.546Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Camille Vasseur - Canapé & Fauteuils (DEV-2026-1007)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Camille Vasseur | Tél: 06 11 22 33 44 | Email: camille.vasseur@test.com | Lieu: Boulogne-Billancourt | Service: Canapé & Fauteuils | Message: Tache de vin rouge récente sur l'assise droite."
+  },
+  {
+    "id": "NOTIF-1789490054439",
+    "timestamp": "2026-09-15T16:34:14.439Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Lucas Martin - Tapis & Moquette (DEV-2026-1007)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Lucas Martin | Tél: 07 00 11 22 33 | Email: N/A | Lieu: Paris | Service: Tapis & Moquette | Message: Aucun message"
+  },
+  {
+    "id": "NOTIF-1789490054393",
+    "timestamp": "2026-09-15T16:34:14.393Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Jean-François d'Hauteville & Cécile - Canapé & Fauteuils (DEV-2026-1007)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Jean-François d'Hauteville & Cécile | Tél: 06.99.88.77.66 | Email: jf.hauteville@domaine-français.fr | Lieu: Saint-Germain-en-Laye (78100) | Service: Canapé & Fauteuils | Message: Café renversé + odeur d'humidité 🐕☕"
+  },
+  {
+    "id": "NOTIF-1789490053549",
+    "timestamp": "2026-09-15T16:34:13.549Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Camille Vasseur - Canapé & Fauteuils (DEV-2026-1007)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Camille Vasseur | Tél: 06 11 22 33 44 | Email: camille.vasseur@test.com | Lieu: Boulogne-Billancourt | Service: Canapé & Fauteuils | Message: Tache de vin rouge récente sur l'assise droite."
+  },
+  {
+    "id": "NOTIF-1789489445331",
+    "timestamp": "2026-09-15T16:24:05.331Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Alexandre Dumas - Canap� & Fauteuils (DEV-2026-1006)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Alexandre Dumas | Tél: 06 99 88 77 66 | Email: alexandre.dumas@test.fr | Lieu: Paris (75008) | Détails: Canap� velours 3 places | Message: Demande de test pour v�rification imm�diate."
+  },
+  {
+    "id": "NOTIF-1789489259999",
+    "timestamp": "2026-09-15T16:20:59.999Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Lucas Martin - Tapis & Moquette (DEV-2026-1006)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Lucas Martin | Tél: 07 00 11 22 33 | Email: N/A | Lieu: Paris | Service: Tapis & Moquette | Message: Aucun message"
+  },
+  {
+    "id": "NOTIF-1789489259953",
+    "timestamp": "2026-09-15T16:20:59.953Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Jean-François d'Hauteville & Cécile - Canapé & Fauteuils (DEV-2026-1006)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Jean-François d'Hauteville & Cécile | Tél: 06.99.88.77.66 | Email: jf.hauteville@domaine-français.fr | Lieu: Saint-Germain-en-Laye (78100) | Service: Canapé & Fauteuils | Message: Café renversé + odeur d'humidité 🐕☕"
+  },
+  {
+    "id": "NOTIF-1789489259210",
+    "timestamp": "2026-09-15T16:20:59.210Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Camille Vasseur - Canapé & Fauteuils (DEV-2026-1006)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Camille Vasseur | Tél: 06 11 22 33 44 | Email: camille.vasseur@test.com | Lieu: Boulogne-Billancourt | Service: Canapé & Fauteuils | Message: Tache de vin rouge récente sur l'assise droite."
+  },
+  {
+    "id": "NOTIF-1789487399946",
+    "timestamp": "2026-09-15T15:49:59.946Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Julien Lefebvre - Canapé & Fauteuils (DEV-2026-1005)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Julien Lefebvre | Tél: 06 98 74 12 55 | Email: j.lefebvre@gmail.com | Lieu: Versailles (78000) | Détails: Canapé panoramique 6 places velours gris | Message: Taches d'eau et auréoles suite à une tentative de nettoyage maison. Besoin d'un pro d'urgence !"
+  },
+  {
+    "id": "NOTIF-1789487292134",
+    "timestamp": "2026-09-15T15:48:12.134Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Lucas Martin - Tapis & Moquette (DEV-2026-1005)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Lucas Martin | Tél: 07 00 11 22 33 | Email:  | Lieu: Paris | Détails: Tapis & Moquette | Message: Aucun message"
+  },
+  {
+    "id": "NOTIF-1789487292069",
+    "timestamp": "2026-09-15T15:48:12.069Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Jean-François d'Hauteville & Cécile - Canapé & Fauteuils (DEV-2026-1005)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Jean-François d'Hauteville & Cécile | Tél: 06.99.88.77.66 | Email: jf.hauteville@domaine-français.fr | Lieu: Saint-Germain-en-Laye (78100) | Détails: Tissu alcantara « ultra délicat » <script>alert(1)</script> | Message: Café renversé + odeur d'humidité 🐕☕"
+  },
+  {
+    "id": "NOTIF-1789487291332",
+    "timestamp": "2026-09-15T15:48:11.332Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Camille Vasseur - Canapé & Fauteuils (DEV-2026-1005)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Camille Vasseur | Tél: 06 11 22 33 44 | Email: camille.vasseur@test.com | Lieu: Boulogne-Billancourt | Détails: Canapé 3 places velours vert émeraude | Message: Tache de vin rouge récente sur l'assise droite."
+  },
+  {
+    "id": "NOTIF-1789487088530",
+    "timestamp": "2026-09-15T15:44:48.530Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Julien Test Live - Canapé & Fauteuils (DEV-2026-1004)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Julien Test Live | Tél: 0699001122 | Email:  | Lieu: Paris | Détails: Canapé & Fauteuils | Message: Aucun message"
+  },
+  {
+    "id": "NOTIF-1789486862316",
+    "timestamp": "2026-09-15T15:41:02.316Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Lucas Martin - Tapis & Moquette (DEV-2026-1004)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Lucas Martin | Tél: 07 00 11 22 33 | Email:  | Lieu: Paris | Détails: Tapis & Moquette | Message: Aucun message"
+  },
+  {
+    "id": "NOTIF-1789486862267",
+    "timestamp": "2026-09-15T15:41:02.267Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Jean-François d'Hauteville & Cécile - Canapé & Fauteuils (DEV-2026-1004)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Jean-François d'Hauteville & Cécile | Tél: 06.99.88.77.66 | Email: jf.hauteville@domaine-français.fr | Lieu: Saint-Germain-en-Laye (78100) | Détails: Tissu alcantara « ultra délicat » <script>alert(1)</script> | Message: Café renversé + odeur d'humidité 🐕☕"
+  },
+  {
+    "id": "NOTIF-1789486861543",
+    "timestamp": "2026-09-15T15:41:01.543Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Camille Vasseur - Canapé & Fauteuils (DEV-2026-1004)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Camille Vasseur | Tél: 06 11 22 33 44 | Email: camille.vasseur@test.com | Lieu: Boulogne-Billancourt | Détails: Canapé 3 places velours vert émeraude | Message: Tache de vin rouge récente sur l'assise droite."
+  },
+  {
+    "id": "NOTIF-1789486771536",
+    "timestamp": "2026-09-15T15:39:31.536Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Lucas Martin - Tapis & Moquette (DEV-2026-1004)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Lucas Martin | Tél: 07 00 11 22 33 | Email:  | Lieu: Paris | Détails: Tapis & Moquette | Message: Aucun message"
+  },
+  {
+    "id": "NOTIF-1789486771486",
+    "timestamp": "2026-09-15T15:39:31.486Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Jean-François d'Hauteville & Cécile - Canapé & Fauteuils (DEV-2026-1004)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Jean-François d'Hauteville & Cécile | Tél: 06.99.88.77.66 | Email: jf.hauteville@domaine-français.fr | Lieu: Saint-Germain-en-Laye (78100) | Détails: Tissu alcantara « ultra délicat » <script>alert(1)</script> | Message: Café renversé + odeur d'humidité 🐕☕"
+  },
+  {
+    "id": "NOTIF-1789486718548",
+    "timestamp": "2026-09-15T15:38:38.548Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande reçue : Camille Vasseur - Canapé & Fauteuils (DEV-2026-1004)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouveau client: Camille Vasseur | Tél: 06 11 22 33 44 | Email: camille.vasseur@test.com | Lieu: Boulogne-Billancourt | Détails: Canapé 3 places velours vert émeraude | Message: Tache de vin rouge récente sur l'assise droite."
+  },
+  {
+    "id": "NOTIF-1",
+    "timestamp": "2026-09-15T15:38:38.217Z",
+    "type": "EMAIL_SIMULATION",
+    "subject": "🔔 Nouvelle demande de devis reçue - Élodie Laurent (#DEV-2026-1001)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Nouvelle demande reçue pour Canapé & Fauteuils à Paris 15ème. Tél: 06 45 89 12 34."
+  }
+]

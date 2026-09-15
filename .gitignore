@@ -1,28 +1,11 @@
-﻿# Node.js
-node_modules/
+﻿node_modules/
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Runtime data (JSON files will persist on Render via disk, not git)
-data/requests.json
-data/notifications.json
-
-# Uploads (user photos — not committed, handled by Render disk)
-uploads/*
-!uploads/.gitkeep
-
-# Environment
 .env
 .env.*
 !.env.example
-
-# OS
+uploads/*
+!uploads/.gitkeep
 .DS_Store
 Thumbs.db
-
-# Logs
 *.log
-
-# Windows batch shortcuts
 start.bat

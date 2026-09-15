@@ -9,11 +9,10 @@
       - key: NODE_ENV
         value: production
       - key: ADMIN_PIN
-        generateValue: false
         value: 2026
-      - key: PORT
-        value: 10000
-    disk:
-      name: cleantex-data
-      mountPath: /opt/render/project/src/data
-      sizeGB: 1
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: GITHUB_REPO
+        value: foocushop/cleantex-pro
+      - key: GITHUB_BRANCH
+        value: main
