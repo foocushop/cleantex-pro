@@ -187,7 +187,8 @@ function renderRequests(requests) {
     const statusClass = getStatusClass(req.status);
     const cleanPhone = req.telephone.replace(/\s+/g, '');
     const waPhone = cleanPhone.startsWith('0') ? '33' + cleanPhone.slice(1) : cleanPhone;
-    const waText = encodeURIComponent(`Bonjour ${req.nom}, c'est CleanTex Pro concernant votre demande de devis #${req.id} pour votre ${req.service}.`);
+    const waText = encodeURIComponent(`Bonjour ${req.nom}, c'est Casa Clean Service concernant votre demande de devis #${req.id} pour votre ${req.service}.`);
+
 
     return `
       <div class="request-card ${req.status === 'Nouveau' ? 'status-nouveau' : ''}" id="card-${req.id}">

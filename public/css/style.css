@@ -270,6 +270,17 @@ button, input, select, textarea {
   color: var(--primary);
 }
 
+.brand-logo-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  display: block;
+}
+
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -815,10 +826,10 @@ button, input, select, textarea {
   background-color: var(--bg-white);
 }
 
-.comparison-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+.comparison-showcase {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .comparison-card {
@@ -826,11 +837,11 @@ button, input, select, textarea {
   border-radius: var(--radius-lg);
   border: 1px solid #e9eef5;
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 
 .comparison-header {
-  padding: 18px 22px;
+  padding: 18px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -838,30 +849,33 @@ button, input, select, textarea {
 }
 
 .comparison-header h4 {
-  font-size: 1.1rem;
+  font-size: 1.18rem;
   font-weight: 800;
   color: var(--text-dark);
 }
 
 .comparison-tag {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  padding: 4px 10px;
+  padding: 5px 12px;
   background-color: var(--primary-light);
   color: var(--primary-dark);
   border-radius: var(--radius-pill);
 }
 
-/* Interactive Slider Element with Clip-Path (No image squishing) */
+/* Interactive Slider Element with Clip-Path (16:9 natural aspect ratio) */
 .compare-container {
   position: relative;
   width: 100%;
-  height: 330px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  max-height: 540px;
   overflow: hidden;
   user-select: none;
   cursor: ew-resize;
   --pos: 50%;
   background-color: #0b1a2b;
+
 }
 
 .compare-img-after,

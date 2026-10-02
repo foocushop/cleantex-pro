@@ -250,8 +250,9 @@ function initQuoteForm() {
         // Bouton WhatsApp
         if (modalWhatsAppBtn) {
           const waMessage = encodeURIComponent(
-            `Bonjour CleanTex Pro ! Je viens de déposer la demande ${result.request.id} sur votre site pour : ${result.request.service} (${result.request.nom} - ${result.request.telephone}). Pouvez-vous me confirmer vos disponibilités ?`
+            `Bonjour Casa Clean Service ! Je viens de déposer la demande ${result.request.id} sur votre site pour : ${result.request.service} (${result.request.nom} - ${result.request.telephone}). Pouvez-vous me confirmer vos disponibilités ?`
           );
+
           modalWhatsAppBtn.href = `https://wa.me/33184742000?text=${waMessage}`;
         }
 

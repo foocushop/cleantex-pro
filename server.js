@@ -30,8 +30,9 @@ const GITHUB_REPO     = process.env.GITHUB_REPO  || 'foocushop/cleantex-pro';
 const GITHUB_BRANCH   = process.env.GITHUB_BRANCH || 'main';
 const USE_GITHUB      = !!GITHUB_TOKEN;
 
-console.log(`[CleanTex Pro] Mode: ${IS_PRODUCTION ? 'PRODUCTION' : 'DÉVELOPPEMENT'} | Port: ${PORT}`);
-console.log(`[CleanTex Pro] Stockage: ${USE_GITHUB ? `GitHub (${GITHUB_REPO})` : 'Fichiers locaux'}`);
+console.log(`[Casa Clean Service] Mode: ${IS_PRODUCTION ? 'PRODUCTION' : 'DÉVELOPPEMENT'} | Port: ${PORT}`);
+console.log(`[Casa Clean Service] Stockage: ${USE_GITHUB ? `GitHub (${GITHUB_REPO})` : 'Fichiers locaux'}`);
+
 
 // ═══════════════════════════════════════════════════════════════════════════════
 //  GITHUB STORAGE LAYER
@@ -336,7 +337,7 @@ function dispatchWebhook(reqData, settings) {
       event: 'new_quote_request', id: reqData.id, timestamp: reqData.createdAt,
       client: { nom: reqData.nom, telephone: reqData.telephone, email: reqData.email, ville: reqData.ville },
       prestation: { service: reqData.service, details: reqData.details, estimation: reqData.estimatifPrix },
-      content: `🔔 **Nouvelle demande CleanTex Pro #${reqData.id}** — ${reqData.nom} | ${reqData.service} | ${reqData.ville}`,
+      content: `🔔 **Nouvelle demande Casa Clean Service #${reqData.id}** — ${reqData.nom} | ${reqData.service} | ${reqData.ville}`,
       embeds: [{
         title: `${reqData.service} — ${reqData.nom}`,
         description: reqData.message || 'Aucun message.',
@@ -346,14 +347,15 @@ function dispatchWebhook(reqData, settings) {
           { name: '📍 Lieu', value: reqData.ville, inline: true },
           { name: '💰 Estimation', value: reqData.estimatifPrix || 'Sur devis', inline: true }
         ],
-        footer: { text: `CleanTex Pro • ${new Date().toLocaleString('fr-FR')}` }
+        footer: { text: `Casa Clean Service • ${new Date().toLocaleString('fr-FR')}` }
       }]
     });
     const opts = {
       hostname: urlObj.hostname, port: urlObj.port || (isHttps ? 443 : 80),
       path: urlObj.pathname + (urlObj.search || ''), method: 'POST', timeout: 5000,
-      headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(payload), 'User-Agent': 'CleanTexPro/2.0' }
+      headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(payload), 'User-Agent': 'CasaCleanService/2.0' }
     };
+
     const r = httpLib.request(opts, res => { res.on('data', () => {}); });
     r.on('error', e => console.warn('[Webhook]', e.message));
     r.on('timeout', () => r.destroy());
@@ -825,11 +827,12 @@ if (require.main === module) {
   initStorage().then(() => {
     app.listen(PORT, () => {
       console.log('====================================================');
-      console.log(` CleanTex Pro  —  http://localhost:${PORT}`);
-      console.log(` Admin         —  http://localhost:${PORT}/admin-login`);
-      console.log(` Health        —  http://localhost:${PORT}/health`);
-      console.log(` Stockage      —  ${USE_GITHUB ? `GitHub (${GITHUB_REPO})` : 'Fichiers locaux'}`);
+      console.log(` Casa Clean Service  —  http://localhost:${PORT}`);
+      console.log(` Admin               —  http://localhost:${PORT}/admin-login`);
+      console.log(` Health              —  http://localhost:${PORT}/health`);
+      console.log(` Stockage            —  ${USE_GITHUB ? `GitHub (${GITHUB_REPO})` : 'Fichiers locaux'}`);
       console.log('====================================================');
+
 
       // Self-ping anti-dormance Render (14 min interval)
       const pingUrl = process.env.RENDER_EXTERNAL_URL
