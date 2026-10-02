@@ -296,25 +296,51 @@
       </div>
 
       <div class="comparison-showcase">
-        <div class="comparison-card">
-          <div class="comparison-header">
-            <div>
-              <h4>Rénovation Sièges & Habitacle Auto</h4>
-              <span style="font-size: 0.84rem; color: #64748b; font-weight: 500;">Shampouinage en profondeur & injection-extraction des taches</span>
+        <div class="comparison-grid">
+          <!-- Card 1: Canapés & Fauteuils -->
+          <div class="comparison-card">
+            <div class="comparison-header">
+              <div>
+                <h4>Canapés & Fauteuils</h4>
+                <span style="font-size: 0.84rem; color: #64748b; font-weight: 500;">Détachage en profondeur & élimination des auréoles</span>
+              </div>
+              <span class="comparison-tag">Avant / Après</span>
             </div>
-            <span class="comparison-tag">Résultat 100% réel</span>
+            <div class="compare-container" style="--pos: 50%;">
+              <!-- After (Clean) Image -->
+              <img class="compare-img-after" src="images/sofa-after.jpg" alt="Canapé propre rénové par Casa Clean Service">
+              <!-- Before (Dirty) Image with clip-path -->
+              <img class="compare-img-before" src="images/sofa-before.jpg" alt="Canapé taché avant nettoyage">
+              
+              <span class="compare-badge-avant">AVANT</span>
+              <span class="compare-badge-apres">APRÈS</span>
+              
+              <div class="compare-divider-line"></div>
+              <div class="compare-handle">↔</div>
+            </div>
           </div>
-          <div class="compare-container" style="--pos: 50%;">
-            <!-- After (Clean) Image -->
-            <img class="compare-img-after" src="images/car-interior-after.jpg" alt="Sièges et habitacle nettoyés par Casa Clean Service">
-            <!-- Before (Dirty) Image with clip-path -->
-            <img class="compare-img-before" src="images/car-interior-before.jpg" alt="Sièges et habitacle avant nettoyage">
-            
-            <span class="compare-badge-avant">AVANT</span>
-            <span class="compare-badge-apres">APRÈS NOTRE INTERVENTION</span>
-            
-            <div class="compare-divider-line"></div>
-            <div class="compare-handle">↔</div>
+
+          <!-- Card 2: Sièges Auto & Habitacle -->
+          <div class="comparison-card">
+            <div class="comparison-header">
+              <div>
+                <h4>Sièges & Habitacle Auto</h4>
+                <span style="font-size: 0.84rem; color: #64748b; font-weight: 500;">Shampouinage en profondeur & injection-extraction</span>
+              </div>
+              <span class="comparison-tag">Avant / Après</span>
+            </div>
+            <div class="compare-container" style="--pos: 50%;">
+              <!-- After (Clean) Image -->
+              <img class="compare-img-after" src="images/car-interior-after.jpg" alt="Sièges et habitacle nettoyés par Casa Clean Service">
+              <!-- Before (Dirty) Image with clip-path -->
+              <img class="compare-img-before" src="images/car-interior-before.jpg" alt="Sièges et habitacle avant nettoyage">
+              
+              <span class="compare-badge-avant">AVANT</span>
+              <span class="compare-badge-apres">APRÈS</span>
+              
+              <div class="compare-divider-line"></div>
+              <div class="compare-handle">↔</div>
+            </div>
           </div>
         </div>
       </div>
@@ -345,14 +371,14 @@
           <div>
             <div class="review-quote-icon">“</div>
             <p class="review-text">
-              Mon canapé d'angle en tissu beige avait accumulé 4 ans de taches d'enfants et de café. Je pensais devoir en racheter un... L'artisan est venu le matin, et à midi il était comme sorti du magasin. Un vrai travail de pro !
+              Mon canapé d'angle en tissu beige avait accumulé des taches et des auréoles. Je pensais devoir en racheter un... L'artisan est venu le matin, et à midi il était comme sorti du magasin. Un vrai travail de pro !
             </p>
           </div>
           <div class="review-author">
-            <div class="author-avatar">SD</div>
+            <div class="author-avatar">FD</div>
             <div class="author-info" style="text-align: left;">
-              <h4>Sophie D.</h4>
-              <p>Paris 15ème • Canapé d'angle 5 places</p>
+              <h4>Fatou D.</h4>
+              <p>Almadies • Canapé d'angle 5 places</p>
             </div>
           </div>
         </div>
@@ -366,10 +392,10 @@
             </p>
           </div>
           <div class="review-author">
-            <div class="author-avatar" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">MB</div>
+            <div class="author-avatar" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">MN</div>
             <div class="author-info" style="text-align: left;">
-              <h4>Marc B.</h4>
-              <p>Boulogne-Billancourt • Matelas King Size</p>
+              <h4>Mouhamadou N.</h4>
+              <p>Mermoz • Matelas King Size</p>
             </div>
           </div>
         </div>
@@ -383,10 +409,10 @@
             </p>
           </div>
           <div class="review-author">
-            <div class="author-avatar" style="background: linear-gradient(135deg, #f59e0b, #b45309);">KT</div>
+            <div class="author-avatar" style="background: linear-gradient(135deg, #f59e0b, #b45309);">AS</div>
             <div class="author-info" style="text-align: left;">
-              <h4>Karim T.</h4>
-              <p>Saint-Germain-en-Laye • Intérieur Auto complet</p>
+              <h4>Abdoulaye S.</h4>
+              <p>Maristes • Intérieur Auto complet</p>
             </div>
           </div>
         </div>
@@ -424,19 +450,19 @@
             <!-- Nom -->
             <div class="form-group">
               <label for="formNom" class="form-label">Nom & Prénom <span class="required">*</span></label>
-              <input type="text" id="formNom" name="nom" class="form-input" placeholder="Ex: Claire Dupont" required>
+              <input type="text" id="formNom" name="nom" class="form-input" placeholder="Ex : Mouhamadou Ndiaye" required>
             </div>
 
             <!-- Email -->
             <div class="form-group">
               <label for="formEmail" class="form-label">Adresse E-mail</label>
-              <input type="email" id="formEmail" name="email" class="form-input" placeholder="Ex: claire.dupont@email.com">
+              <input type="email" id="formEmail" name="email" class="form-input" placeholder="Ex : m.ndiaye@gmail.com">
             </div>
 
             <!-- Telephone -->
             <div class="form-group">
               <label for="formPhone" class="form-label">Numéro de Téléphone <span class="required">*</span></label>
-              <input type="tel" id="formPhone" name="telephone" class="form-input" placeholder="Ex: 06 12 34 56 78" required>
+              <input type="tel" id="formPhone" name="telephone" class="form-input" placeholder="Ex : 77 123 45 67 ou 78 456 78 90" required>
             </div>
 
             <!-- Service Dropdown -->
@@ -455,13 +481,13 @@
             <!-- Details -->
             <div class="form-group">
               <label for="formDetails" class="form-label">Format / Nombre de places</label>
-              <input type="text" id="formDetails" name="details" class="form-input" placeholder="Ex: Canapé 3 places velours, matelas 160x200...">
+              <input type="text" id="formDetails" name="details" class="form-input" placeholder="Ex : Canapé 3 places velours, matelas 160x200...">
             </div>
 
-            <!-- Ville / Code Postal -->
+            <!-- Ville / Quartier -->
             <div class="form-group">
-              <label for="formVille" class="form-label">Ville ou Code Postal <span class="required">*</span></label>
-              <input type="text" id="formVille" name="ville" class="form-input" placeholder="Ex: 75015 Paris ou Versailles" required>
+              <label for="formVille" class="form-label">Ville ou Quartier <span class="required">*</span></label>
+              <input type="text" id="formVille" name="ville" class="form-input" placeholder="Ex : Dakar, Almadies, Mermoz, Maristes, Plateau..." required>
             </div>
 
             <!-- Date Souhaitée -->
@@ -473,7 +499,7 @@
             <!-- Message / Stains details -->
             <div class="form-group full-width">
               <label for="formMessage" class="form-label">Message / Précision sur les taches</label>
-              <textarea id="formMessage" name="message" class="form-textarea" placeholder="Décrivez brièvement les taches (eau, café, gras, auréoles...) ou vos contraintes d'horaires..."></textarea>
+              <textarea id="formMessage" name="message" class="form-textarea" placeholder="Décrivez brièvement les taches (eau, café, poussière, auréoles...) ou vos disponibilités..."></textarea>
             </div>
 
             <!-- Optional Photos Upload -->

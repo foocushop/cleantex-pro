@@ -827,8 +827,15 @@ button, input, select, textarea {
 }
 
 .comparison-showcase {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
   width: 100%;
 }
 
@@ -838,29 +845,48 @@ button, input, select, textarea {
   border: 1px solid #e9eef5;
   overflow: hidden;
   box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.comparison-card:hover {
+  box-shadow: var(--shadow-lg);
 }
 
 .comparison-header {
-  padding: 18px 24px;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   border-bottom: 1px solid #f1f5f9;
 }
 
 .comparison-header h4 {
-  font-size: 1.18rem;
+  font-size: 1.1rem;
   font-weight: 800;
   color: var(--text-dark);
+  margin-bottom: 2px;
 }
 
 .comparison-tag {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  padding: 5px 12px;
+  padding: 4px 10px;
   background-color: var(--primary-light);
   color: var(--primary-dark);
   border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 620px;
+    margin: 0 auto;
+  }
 }
 
 /* Interactive Slider Element with Clip-Path (16:9 natural aspect ratio) */
