@@ -812,15 +812,9 @@ app.use((err, req, res, next) => {
 // ─── Price estimator ──────────────────────────────────────────────────────────
 
 function calculateEstimate(service) {
-  if (!service) return 'Sur devis';
-  const s = service.toLowerCase();
-  if (s.includes('matelas'))              return 'À partir de 49€';
-  if (s.includes('canap'))               return 'À partir de 69€';
-  if (s.includes('tapis') || s.includes('moquette')) return 'À partir de 39€';
-  if (s.includes('auto') || s.includes('voiture'))   return 'À partir de 59€';
-  if (s.includes('pack'))                return 'À partir de 119€';
   return 'Sur devis';
 }
+
 
 // ═══════════════════════════════════════════════════════════════════════════════
 //  START SERVER
