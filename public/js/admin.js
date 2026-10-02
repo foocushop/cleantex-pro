@@ -117,6 +117,10 @@ async function loadDashboardData(isBackground = false) {
 async function loadStats() {
   try {
     const res = await fetch('/api/stats');
+    if (res.status === 401) {
+      window.location.href = '/admin-login';
+      return;
+    }
     if (!res.ok) return;
     const data = await res.json();
     if (data.success && data.stats) {
@@ -146,6 +150,10 @@ async function loadRequests(isBackground = false) {
     }
 
     const res = await fetch(url);
+    if (res.status === 401) {
+      window.location.href = '/admin-login';
+      return;
+    }
     if (!res.ok) return;
     const data = await res.json();
 
@@ -557,19 +565,28 @@ function initAuth() {
     }
   };
 
+  // Helper to read token from cookies, sessionStorage or localStorage
+  const getStoredToken = () => {
+    const match = document.cookie.match(/(?:^|;\s*)cleantex_admin_token=([^;]+)/);
+    const cookieToken = match ? decodeURIComponent(match[1]) : null;
+    return sessionStorage.getItem('ctx_admin_token') || localStorage.getItem('ctx_admin_token') || cookieToken;
+  };
+
   // Check existing session token
-  const token = sessionStorage.getItem('ctx_admin_token');
+  const token = getStoredToken();
   if (token) {
+    sessionStorage.setItem('ctx_admin_token', token);
+    localStorage.setItem('ctx_admin_token', token);
+    const expires = new Date(Date.now() + 8 * 60 * 60 * 1000).toUTCString();
+    document.cookie = 'cleantex_admin_token=' + encodeURIComponent(token) + '; expires=' + expires + '; path=/; SameSite=Strict';
     if (lockOverlay) lockOverlay.classList.remove('active');
     startDashboard();
   } else {
-    if (lockOverlay) {
-      lockOverlay.classList.add('active');
-      setTimeout(() => pinInput && pinInput.focus(), 200);
-    }
+    // If no token exists at all, redirect cleanly to /admin-login
+    window.location.href = '/admin-login';
   }
 
-  // Handle PIN unlock form
+  // Handle PIN unlock form (if overlay is ever active)
   if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -591,7 +608,10 @@ function initAuth() {
         const data = await res.json();
 
         if (data.success && data.token) {
+          const expires = new Date(Date.now() + 8 * 60 * 60 * 1000).toUTCString();
+          document.cookie = 'cleantex_admin_token=' + encodeURIComponent(data.token) + '; expires=' + expires + '; path=/; SameSite=Strict';
           sessionStorage.setItem('ctx_admin_token', data.token);
+          localStorage.setItem('ctx_admin_token', data.token);
           if (errorMsg) errorMsg.textContent = '';
           if (lockOverlay) lockOverlay.classList.remove('active');
           if (pinInput) pinInput.value = '';

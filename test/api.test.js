@@ -76,15 +76,21 @@ async function runTests() {
       const res = await makeRequest('GET', '/');
       assert.strictEqual(res.status, 200);
       assert.ok(typeof res.body === 'string');
-      assert.ok(res.body.includes('CleanTex'));
+      assert.ok(res.body.includes('Casa Clean') || res.body.includes('CleanTex'));
       assert.ok(res.body.includes('Nettoyage en profondeur pour les textiles qui comptent'));
     });
 
-    await test('GET /admin doit renvoyer l\'espace de réception des requêtes en HTML', async () => {
+    await test('GET /admin sans authentification redirige vers /admin-login (302)', async () => {
       const res = await makeRequest('GET', '/admin');
+      assert.strictEqual(res.status, 302);
+      assert.strictEqual(res.headers.location, '/admin-login');
+    });
+
+    await test('GET /admin-login doit renvoyer la page de connexion sécurisée en HTML', async () => {
+      const res = await makeRequest('GET', '/admin-login');
       assert.strictEqual(res.status, 200);
       assert.ok(typeof res.body === 'string');
-      assert.ok(res.body.includes('Boîte de Réception des Demandes Clients'));
+      assert.ok(res.body.includes('Acces') || res.body.includes('Accès'));
     });
 
     // 2. Form Submission API

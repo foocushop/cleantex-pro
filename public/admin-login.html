@@ -127,9 +127,11 @@
         if (data.success && data.token) {
           const expires = new Date(Date.now() + 8 * 60 * 60 * 1000).toUTCString();
           document.cookie = 'cleantex_admin_token=' + encodeURIComponent(data.token) + '; expires=' + expires + '; path=/; SameSite=Strict';
-          loginBtn.textContent = 'Connexion reussie...';
+          sessionStorage.setItem('ctx_admin_token', data.token);
+          localStorage.setItem('ctx_admin_token', data.token);
+          loginBtn.textContent = 'Connexion réussie...';
           loginBtn.style.background = 'linear-gradient(135deg, #059669, #047857)';
-          setTimeout(() => { window.location.href = '/admin'; }, 400);
+          setTimeout(() => { window.location.href = '/admin'; }, 200);
         } else {
           showError();
           resetBtn();

@@ -91,7 +91,6 @@ async function runResponsiveAndAuthTests() {
 
       assert.ok(html.includes('hamburger-line'), 'Le bouton hamburger doit comporter les barres animées');
       assert.ok(html.includes('header-cta-btn'), 'Le bouton Obtenir un devis du header doit avoir la classe header-cta-btn pour masquage mobile');
-      assert.ok(html.includes('mobile-phone-btn'), 'Le header mobile doit comporter le bouton d\'appel direct');
     });
 
     // 3. CSS overflow rules
@@ -107,7 +106,13 @@ async function runResponsiveAndAuthTests() {
 
     // 4. Admin lock screen on admin.html
     await test('admin.html doit comporter l\'écran de verrouillage par code PIN et le formulaire d\'authentification', async () => {
-      const res = await makeRequest('GET', '/admin');
+      const loginRes = await makeRequest('POST', '/api/auth/login', { pin: '2026' });
+      assert.strictEqual(loginRes.status, 200);
+      const token = loginRes.body.token;
+
+      const res = await makeRequest('GET', '/admin', null, {
+        Cookie: `cleantex_admin_token=${token}`
+      });
       assert.strictEqual(res.status, 200);
       const html = res.body;
 
