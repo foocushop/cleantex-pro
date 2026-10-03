@@ -1,9 +1,8 @@
 /* ==========================================================================
    CleanTex Pro - Main Stylesheet
    Modern, ultra-clean UI matching the mockup design
+   Fonts loaded via preconnect in HTML <head> for instant rendering
    ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   /* Brand Colors from Mockup */

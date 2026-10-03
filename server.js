@@ -405,7 +405,11 @@ function handleUpload(req, res, next) {
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(PUBLIC_DIR));
+app.use(express.static(PUBLIC_DIR, {
+  maxAge: '2h',
+  etag: true,
+  lastModified: true
+}));
 
 // ─── Uploaded photos route ───────────────────────────────────────────────────
 // Serve files: check local disk first. If missing (e.g. after Render restart/redeploy),

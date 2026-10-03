@@ -1,9 +1,8 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    CleanTex Pro — Admin Dashboard CSS  (Redesign + Full Responsiveness)
    Stack: HTML/CSS3, mobile-first, no frameworks
+   Fonts loaded via preconnect in HTML <head> for instant rendering
    ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 /* ------------------------------------------------------------------
    Design Tokens

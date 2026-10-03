@@ -5,9 +5,138 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Casa Clean Service | Nettoyage de Canapés, Matelas, Tapis & Véhicules à Domicile</title>
   <meta name="description" content="Spécialiste du nettoyage et détachage de canapés, matelas, moquettes et sièges auto à domicile. Produits 100% bio et écologiques, séchage rapide en 2h.">
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Preload & Main Stylesheet -->
+  <link rel="preload" href="css/style.css" as="style">
   <link rel="stylesheet" href="css/style.css">
+
   <link rel="icon" type="image/jpeg" href="images/logo.jpg">
   <link rel="apple-touch-icon" href="images/logo.jpg">
+
+  <!-- ====================================================
+       Critical Inline CSS (Eliminates FOUC on Cold Load)
+       ==================================================== -->
+  <style>
+    /* CSS Variables & Reset */
+    :root {
+      --primary: #00bba6;
+      --primary-hover: #009e8c;
+      --primary-light: #e6f8f5;
+      --primary-border: #7ee2d5;
+      --primary-dark: #007a6d;
+      --navy-dark: #0b1a2b;
+      --navy-card: #13273d;
+      --bg-cream: #faf8f5;
+      --bg-mint: #eef9f6;
+      --bg-white: #ffffff;
+      --text-dark: #121e2c;
+      --text-body: #4a596d;
+      --text-muted: #7b8a9e;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      margin: 0;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    svg { display: inline-block; vertical-align: middle; }
+
+    /* CRITICAL: Overlays and menus must NEVER be displayed before user action */
+    .mobile-nav { display: none !important; }
+    .mobile-nav.open { display: flex !important; }
+    .modal-overlay { display: none !important; }
+    .modal-overlay.active { display: flex !important; }
+
+    /* Header & Navigation frame */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #eef2f6;
+    }
+    .navbar {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 76px; max-width: 1200px; margin: 0 auto; padding: 0 24px;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-dark); }
+    .brand-logo-img { width: 44px; height: 44px; border-radius: 12px; object-fit: cover; }
+    .logo-text { font-size: 1.35rem; font-weight: 800; }
+    .logo-text span { color: var(--primary); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
+    .nav-link { text-decoration: none; font-weight: 600; font-size: 0.95rem; color: var(--text-body); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-weight: 700; border-radius: var(--radius-pill); text-decoration: none;
+      cursor: pointer; transition: all 0.2s ease; border: none; font-family: inherit;
+    }
+    .btn-primary {
+      background-color: var(--primary); color: #ffffff;
+      padding: 13px 28px; font-size: 0.98rem;
+      box-shadow: 0 6px 20px rgba(0, 187, 166, 0.35);
+    }
+    .header-cta-btn { padding: 10px 22px; font-size: 0.92rem; }
+    .mobile-menu-btn { display: none; }
+    @media (max-width: 960px) {
+      .nav-links, .header-cta-btn { display: none !important; }
+      .mobile-menu-btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        flex-direction: column; gap: 5px; width: 42px; height: 42px;
+        background: #f1f5f9; border: 1.5px solid #e2e8f0; border-radius: 10px;
+        cursor: pointer; padding: 0;
+      }
+      .hamburger-line { width: 20px; height: 2px; background-color: var(--navy-dark); border-radius: 2px; }
+    }
+
+    /* Container & Hero initial layout */
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+    .hero-section { background-color: var(--bg-cream); padding: 48px 0 64px; }
+    .hero-wrapper { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
+    @media (max-width: 992px) { .hero-wrapper { grid-template-columns: 1fr; gap: 36px; } }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--primary-light); color: var(--primary-dark);
+      padding: 6px 14px; border-radius: var(--radius-pill);
+      font-size: 0.82rem; font-weight: 700; margin-bottom: 20px;
+    }
+    .hero-title { font-size: 3rem; font-weight: 800; color: var(--text-dark); line-height: 1.15; margin: 0 0 20px 0; }
+    .hero-title span { color: var(--primary); }
+    .hero-subtitle { font-size: 1.1rem; color: var(--text-body); line-height: 1.6; margin: 0 0 32px 0; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 36px; }
+    .hero-image-wrap {
+      position: relative; border-radius: 24px; overflow: hidden;
+      box-shadow: 0 20px 40px rgba(11, 26, 43, 0.12); aspect-ratio: 4 / 3;
+      background-color: #e2e8f0;
+    }
+    .hero-img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Comparison sliders initial layout: NEVER stack before/after images */
+    .compare-container {
+      position: relative; width: 100%; aspect-ratio: 16 / 9;
+      overflow: hidden; background-color: #0b1a2b; user-select: none;
+    }
+    .compare-img-after, .compare-img-before {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+    .compare-img-before {
+      clip-path: polygon(0 0, var(--pos, 50%) 0, var(--pos, 50%) 100%, 0 100%);
+      -webkit-clip-path: polygon(0 0, var(--pos, 50%) 0, var(--pos, 50%) 100%, 0 100%);
+    }
+  </style>
 </head>
 <body>
 
