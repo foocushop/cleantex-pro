@@ -1,5 +1,13 @@
 [
   {
+    "id": "NOTIF-1791131890603",
+    "timestamp": "2026-10-04T16:38:10.603Z",
+    "type": "NEW_REQUEST",
+    "subject": "🔔 Nouvelle demande : Ndeye — Pack Complet Multi-textiles (DEV-2026-1001)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Client: Ndeye | Tél: 771251254 | darou thioub | Pack Complet Multi-textiles"
+  },
+  {
     "id": "NOTIF-1790954644851",
     "timestamp": "2026-10-02T15:24:04.851Z",
     "type": "NEW_REQUEST",
