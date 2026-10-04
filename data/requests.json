@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "DEV-2026-1001",
+    "createdAt": "2026-10-04T16:38:10.293Z",
+    "nom": "Ndeye",
+    "email": "ndeye@gmail.com",
+    "telephone": "771251254",
+    "service": "Pack Complet Multi-textiles",
+    "details": "",
+    "ville": "darou thioub",
+    "dateSouhaitee": "",
+    "message": "",
+    "photos": [],
+    "status": "Nouveau",
+    "notesInternes": "",
+    "estimatifPrix": "Sur devis"
+  }
+]
