@@ -1,5 +1,13 @@
 [
   {
+    "id": "NOTIF-1791132597619",
+    "timestamp": "2026-10-04T16:49:57.619Z",
+    "type": "NEW_REQUEST",
+    "subject": "🔔 Nouvelle demande : Mouhamad Diedhiou — Canapé & Fauteuils (DEV-2026-1002)",
+    "to": "contact@cleantex-pro.fr",
+    "content": "Client: Mouhamad Diedhiou | Tél: 778288601 | Niaga | Canapé & Fauteuils"
+  },
+  {
     "id": "NOTIF-1791131890603",
     "timestamp": "2026-10-04T16:38:10.603Z",
     "type": "NEW_REQUEST",
